@@ -1,0 +1,7 @@
+{
+  "name": "Audio Bible Reader - Eleven Labs ESV Options",
+  "description": "An application to fetch and read Bible verses aloud using different Text-to-Speech technologies, including Google's Gemini API.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
