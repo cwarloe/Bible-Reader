@@ -1,0 +1,81 @@
+slug: eph-04-daytime-identity-walk
+title: "Ephesians 4 — Identity & Walk (Daytime Drill)"
+suite: ephesians
+track_type: daytime
+perspective: first_person
+source: "Ephesians 4:1-32"
+target_minutes: 8
+
+# Daytime is "The Conditioning". Each statement below is generated ONCE and
+# spoken three times by the assembler, so a 15-line drill costs 15 generations
+# rather than 45. The second-person synthesis coda at the bottom is spoken once.
+
+blocks:
+  - id: opening-tone
+    note: "Sets delivery for the take; every later block inherits the voice settings, not the tag."
+    repeat: 1
+    text: |
+      [calm, steady, authoritative, unhurried, measured delivery]
+      This is how I choose to walk each day.
+
+  - id: walk-worthy
+    text: "I walk in a manner worthy of the calling to which I have been called."
+
+  - id: humility-patience
+    text: "I walk in all humility, gentleness, and patience."
+
+  - id: maintain-unity
+    text: "I bear with others in love, eager to maintain the unity of the Spirit in the bond of peace."
+
+  - id: not-tossed
+    text: "I am no longer tossed to and fro by human cunning or deceitful schemes."
+
+  - id: speak-truth
+    text: "I speak the truth in love, growing up in every way into maturity in Christ."
+
+  - id: put-off-old
+    text: "I have put off the old way of living, and I am renewed in the spirit of my mind."
+
+  - id: put-on-new
+    text: "I put on the new self, created after the likeness of God in true righteousness and holiness."
+
+  - id: anger-discipline
+    text: "When anger arises, I do not sin, and I give no opportunity to the enemy."
+
+  - id: honest-work
+    text: "I work honestly with my own hands so that I always have something to share with anyone in need."
+
+  - id: edifying-speech
+    text: "No corrupting talk comes out of my mouth, only words that build up and give grace."
+
+  - id: put-away-bitterness
+    text: "I put away all bitterness, wrath, anger, and slander."
+
+  - id: kind-forgiving
+    text: "I am kind, tenderhearted, and forgiving, just as God in Christ forgave me."
+
+  - id: walk-in-love
+    text: "I walk in love, giving myself fully to the purpose before me."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words and meditate on their truth, I strengthen my daily walk in Christ. I believe in living out who I am created to be, and that is exactly what I choose to do."
+
+  - id: closing-anchor
+    text: "This is how I choose to walk each day."
+
+# Phase 2: the perspective shift. Spoken once, no repetition, as an external
+# voice cementing what was just drilled in the first person.
+synthesis:
+  id: synthesis-you
+  text: |
+    [deliberate, steady cadence]
+    This is how you choose to walk each day.
+    You walk in a manner worthy of the calling to which you have been called. You walk in all humility, gentleness, and patience, bearing with others in love and guarding the bond of peace.
+    You are no longer tossed to and fro by deceitful schemes. You speak the truth in love, growing up in every way into maturity in Christ.
+    You have made the clear decision to put off the old way of living. You are renewed in the spirit of your mind, and you put on the new self — created in true righteousness and holiness.
+    When anger arises, you choose not to sin. You give no foothold to the enemy.
+    You work honestly so you always have something to share with anyone in need. You let no corrupting talk come out of your mouth, but only words that build up and give grace.
+    You put away all bitterness, wrath, and slander. You are kind, tenderhearted, and forgiving, just as God in Christ forgave you.
+    You walk in love, giving yourself fully to the purpose before you.
+    Each time you hear these words and meditate on their truth, you strengthen your daily walk in Christ. You believe in living out who you are created to be, and that is exactly what you choose to do.
+    This is how you choose to walk each day.

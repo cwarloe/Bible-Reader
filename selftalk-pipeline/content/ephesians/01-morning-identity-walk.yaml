@@ -1,0 +1,124 @@
+slug: eph-01-morning-identity-walk
+title: "Ephesians 4 — Identity, Renewal & Walk"
+suite: ephesians
+track_type: morning
+perspective: second_person
+source: "Ephesians 4:1-32"
+target_minutes: 8
+
+# Morning is "The Directive": second person throughout, continuous prose, the
+# software metaphor bookending the track, one mirror check, one descriptor
+# series, tricolons at the turns.
+
+blocks:
+  - id: opening-frame
+    note: "Bookend. The closing block mirrors this one word for word."
+    text: |
+      [calm, steady, authoritative, unhurried, measured delivery]
+      These are the programs you choose to have... about yourself... and your identity and daily walk in Christ.
+
+  - id: recognition
+    text: |
+      You choose to recognize that you are a person of renewed spirit, transformed mind, and holy calling. You believe in the new life given to you, and you live out the divine calling that is within you. You choose to be in charge of your own personal development and your daily conduct. How you live each day is up to you, and no one else.
+
+  - id: mirror-check
+    note: "The mirror anchor — one per morning track."
+    text: |
+      When you look at yourself in the mirror, you see yourself as being humble, gentle, patient, and walking in a manner worthy of your calling. You see yourself as someone who actively builds unity, bears with others in love, and guards the bond of peace.
+
+  - id: cultivation
+    text: |
+      You choose to be a person who takes the time to cultivate the character of Christ in your daily life. You understand the profound importance of developing spiritual maturity and achieving the fullness designed for you.
+
+  - id: tricolon-put-on
+    note: "Tricolon. Line breaks are load-bearing — v3 treats each line as its own thought."
+    text: |
+      [deliberate, steady cadence]
+      You put off the old.
+      You renew your mind.
+      And you put on the new.
+
+  - id: no-fear
+    text: |
+      You choose to never fear trials, and you never fear growth. You know that each day you learn to walk faithfully, and challenges and failures are stepping stones along the way. You are an achiever of spiritual maturity. Living out your faith is a natural, everyday part of your life.
+
+  - id: time-well-spent
+    text: |
+      You really enjoy creating spiritual growth in your life. You know that you deserve the time it takes to build the integrity and strength of character you choose to have. Every moment you spend anchoring yourself in Christ is time that is always well spent.
+
+  - id: personal-strength
+    text: |
+      Along with creating spiritual maturity, you always add to your personal strength. You build self-discipline, honesty, and steadfast character in everything you do.
+
+  - id: descriptor-series
+    note: "The descriptor list — ellipses, no conjunctions, one breath per word."
+    text: |
+      [deliberate emphasis]
+      An accurate description of the person you choose to be would include the words: humble... gentle... patient... united... truthful... kind... tenderhearted... forgiving... actively growing... aware of your calling... and making progress every day.
+
+  - id: leave-behind
+    text: |
+      You choose to be a person who leaves behind the former way of living. You make the clear decision to reject callousness, deceitful desires, and the futility of a darkened mind. You choose instead true righteousness and holiness.
+
+  - id: no-longer-a-child
+    text: |
+      You are no longer a child, tossed to and fro by every wind of doctrine, human cunning, or deceitful schemes. You choose to speak the truth in love. You grow up in every way into him who is the head... into Christ.
+
+  - id: tricolon-body
+    text: |
+      [measured, deliberate pacing]
+      You are part of a body joined and held together by every supporting ligament.
+      You do your part.
+      You work properly.
+      And you build up the body in love.
+
+  - id: others
+    text: |
+      You are interested in your own growth, but you are also devoted to the building up of others. You encourage your brothers and sisters, support their progress, and never let anything hinder the unity of the Spirit.
+
+  - id: anger
+    text: |
+      [steady and direct]
+      When anger arises, you choose not to sin. You never let the sun go down on your anger, and you give no place, no foothold, and no opportunity to the enemy.
+
+  - id: honest-work
+    text: |
+      You choose to work honestly with your own hands, doing good and productive labor, so that you always have an abundance to share with anyone in need.
+
+  - id: speech-discipline
+    text: |
+      You guard your tongue with discipline. You let no corrupting, negative, or tearing talk come out of your mouth, but only words that build up, fit the occasion, and give grace to everyone who hears.
+
+  - id: sealed
+    text: |
+      You choose never to grieve the Holy Spirit of God, by whom you were sealed for the day of redemption.
+
+  - id: tricolon-put-away
+    text: |
+      [deliberate cadence]
+      You put away all bitterness.
+      You put away all wrath and anger.
+      And you remove every form of malice.
+
+  - id: forgiving
+    text: |
+      You choose to be kind, tenderhearted, and forgiving, just as God in Christ forgave you. You walk in love, following the example of Christ, who gave himself up as a fragrant offering and sacrifice.
+
+  - id: every-day
+    text: |
+      [confident and clear]
+      Every day, you renew your mind.
+      Every day, you walk in love.
+
+  - id: investment
+    text: |
+      You believe in investing in your spiritual growth in the most positive possible way. The character you build is always worth the investment you make. Walking in your calling comes naturally, automatically, and joyfully to you.
+
+  - id: knowing
+    text: |
+      You know what you believe, you know how you choose to live, you know who you are in Christ, and you know that it is all up to you.
+
+  - id: closing-anchor
+    note: "Bookend. Mirrors opening-frame, then the closing truth claim."
+    text: |
+      Those are the programs you choose to have about your identity and walk. You already know the truth: you are a new creation... and today is a great day to prove it.

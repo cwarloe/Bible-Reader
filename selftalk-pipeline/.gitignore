@@ -1,0 +1,14 @@
+# Rendered audio is a build artifact — the YAML is the source of truth.
+output/
+
+# Secrets
+.env
+
+# Reference transcripts of commercial programs are studied, not redistributed.
+content/reference/
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
