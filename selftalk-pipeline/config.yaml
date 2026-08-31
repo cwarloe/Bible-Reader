@@ -3,7 +3,7 @@
 
 elevenlabs:
   # Find yours at https://elevenlabs.io/app/voice-lab -> the voice -> ID.
-  voice_id: ""
+  voice_id: "YXtimK1Uha5A2ZzZpoAq"
   model_id: "eleven_v3"
   # Robust end of the slider: keeps the measured, unhurried cadence and stops
   # the model speeding up through long descriptor lists.
