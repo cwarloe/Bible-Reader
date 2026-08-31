@@ -127,6 +127,8 @@ content/             the scripts — the actual source of truth
   ephesians/         Ephesians 4-6, three morning tracks and one daytime drill
   templates/         starting point for a new program
 docs/PATTERNS.md     the structural analysis behind the scripts
+docs/CONTENT-STRATEGY.md  which suites to build next, and the worldview
+                     problem to avoid when adapting the reference material
 output/              gitignored build artifacts
   raw_takes/         one file per block, named by content hash
   master/            finished session tracks

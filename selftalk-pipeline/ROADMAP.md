@@ -77,10 +77,29 @@ in your ears is not functional.
 
 **Enough content that the rotation does not repeat inside a week.**
 
-- [ ] Second suite chosen and scripted (Psalms? Proverbs? Romans 8?)
+The candidate suites, why they exist, and the worldview problem to avoid when
+adapting them are worked out in [`docs/CONTENT-STRATEGY.md`](docs/CONTENT-STRATEGY.md).
+Read that before writing a new suite — a straight port of the reference material
+lands you in "it's all up to you" territory, which does not survive contact with
+John 15:5.
+
+Build these three, in this order, and then reassess:
+
+- [ ] **Identity in Christ** (Ephesians 1:3–14) — the indicative every other
+      suite assumes; nearly zero adaptation needed
+- [ ] **Peace & Anxiety** (Philippians 4:4–9) — highest felt need, and forces
+      the night format to be solved once
+- [ ] **Psalms of Self-Address** (Ps 42, 62, 103) — the method's own source text
+
+Supporting work:
+
 - [ ] Suite-level manifest — what belongs to a suite, in what order
 - [ ] `selftalk build` for a whole suite in one command
 - [ ] Playlist or per-suite output folders
+
+**Do not plan past this.** Twelve suites at four tracks each is 48 tracks. At
+three finished tracks you will know more about what you actually listen to than
+any plan written today.
 
 ---
 
