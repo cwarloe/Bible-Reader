@@ -56,6 +56,22 @@ class GenerationPlan:
     def billable_chars(self) -> int:
         return sum(block.char_count for block, _ in self.to_generate)
 
+    def sample(self, limit: int | None) -> "GenerationPlan":
+        """Trim to the first `limit` takes still needing generation.
+
+        Program order is preserved, so a sample is the opening stretch of the
+        track rather than a scattering of lines — enough to hear the voice and
+        the pacing before committing to the whole thing. Takes already cached
+        are untouched; they cost nothing either way.
+        """
+        if limit is None or limit >= len(self.to_generate):
+            return self
+        return GenerationPlan(
+            to_generate=self.to_generate[:limit],
+            cached=self.cached,
+            stale=self.stale,
+        )
+
 
 def plan_generation(
     program: Program,
@@ -119,11 +135,77 @@ def synthesize(text: str, voice: VoiceSettings, api_key: str, timeout: int = 120
         raise GenerationError(f"could not reach ElevenLabs: {exc.reason}") from exc
 
 
-def resolve_api_key(explicit: str | None = None) -> str:
-    key = explicit or os.environ.get("ELEVENLABS_API_KEY", "")
+VOICES_URL = "https://api.elevenlabs.io/v1/voices"
+
+
+def parse_voices(payload: dict) -> list[dict[str, str]]:
+    """Pull the fields worth showing out of a /v1/voices response."""
+    voices = payload.get("voices")
+    if not isinstance(voices, list):
+        raise GenerationError("unexpected response from ElevenLabs: no 'voices' list")
+
+    parsed = []
+    for voice in voices:
+        labels = voice.get("labels") or {}
+        descriptors = [labels.get(k) for k in ("accent", "age", "gender", "description")]
+        parsed.append(
+            {
+                "voice_id": str(voice.get("voice_id", "")),
+                "name": str(voice.get("name", "")),
+                "category": str(voice.get("category", "")),
+                "labels": ", ".join(str(d) for d in descriptors if d),
+            }
+        )
+    return parsed
+
+
+def list_voices(api_key: str, timeout: int = 30) -> list[dict[str, str]]:
+    """Fetch the voices available to this account."""
+    request = urllib.request.Request(VOICES_URL, headers={"xi-api-key": api_key})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return parse_voices(json.loads(response.read()))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", "replace")[:500]
+        raise GenerationError(f"ElevenLabs returned {exc.code}: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise GenerationError(f"could not reach ElevenLabs: {exc.reason}") from exc
+
+
+def read_dotenv(path: Path | str = ".env") -> dict[str, str]:
+    """Minimal KEY=VALUE reader, so .env works without a dotenv dependency.
+
+    Ignores blanks, # comments and a leading `export`, and strips one layer of
+    surrounding quotes. A missing file is not an error.
+    """
+    path = Path(path)
+    if not path.exists():
+        return {}
+
+    values: dict[str, str] = {}
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.removeprefix("export ").partition("=")
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        values[key.strip()] = value
+    return values
+
+
+def resolve_api_key(explicit: str | None = None, dotenv_path: Path | str = ".env") -> str:
+    """The key, from --api-key, the environment, or .env — in that order."""
+    key = (
+        explicit
+        or os.environ.get("ELEVENLABS_API_KEY", "")
+        or read_dotenv(dotenv_path).get("ELEVENLABS_API_KEY", "")
+    )
     if not key:
         raise GenerationError(
-            "no API key: set ELEVENLABS_API_KEY in your environment or .env"
+            "no API key: pass --api-key, set ELEVENLABS_API_KEY, "
+            "or put it in .env (see .env.example)"
         )
     return key
 

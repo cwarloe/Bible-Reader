@@ -44,10 +44,16 @@ listened to start to finish.*
 - [x] Content-hash cache so an edited line regenerates that line and nothing else
 - [x] `selftalk plan` — see the character cost before committing to it
 - [x] Assembler with per-track-type pacing (morning / daytime / night)
-- [ ] Pick and record the voice ID in `config.yaml`
-- [ ] First real generation run against the ElevenLabs API
-- [ ] First assembled master track
+- [x] `selftalk voices` — pick a voice ID without leaving the terminal
+- [x] `generate --sample N` — prove the voice on 752 chars, not 4404
+- [ ] Put your key in `.env`, run `selftalk voices`, set `elevenlabs.voice_id`
+- [ ] `generate --sample 3` then `build --allow-missing` — does the voice work?
+- [ ] Full generation run, then `selftalk build`
 - [ ] Listen to it end to end and write down what is wrong with it
+
+The ElevenLabs HTTP call is the one path in the pipeline that has never run —
+there was no key available when it was written. `--sample` exists so that
+finding out costs 752 characters instead of a full track.
 
 **The last item is the real deliverable.** Everything before it is scaffolding.
 Expect the first listen to change the pacing constants — that is what it is for.

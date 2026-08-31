@@ -51,10 +51,23 @@ Then set `elevenlabs.voice_id` in `config.yaml` to the voice you want.
 ```bash
 selftalk stats                    # how long is it, what will it cost
 selftalk validate                 # pre-flight, before spending anything
+selftalk voices                   # list your voices, pick a voice_id
 selftalk plan                     # exactly which takes would be billed
 selftalk generate --only SLUG     # render missing takes (asks first)
 selftalk build --only SLUG        # stitch into output/master/SLUG.mp3
 ```
+
+**Sample before you commit.** The first run against a new voice is the one most
+likely to be wrong, and a full track is a few thousand characters. `--sample`
+generates only the opening stretch:
+
+```bash
+selftalk generate --only SLUG --sample 3   # 752 chars instead of 4404
+selftalk build --only SLUG --allow-missing # hear the voice and the pacing
+```
+
+If it sounds right, re-run `generate` without `--sample` — the three takes you
+already paid for are cached and will not be billed again.
 
 Run it as `python3 -m selftalk.cli` if you have not `pip install -e .`'d it.
 

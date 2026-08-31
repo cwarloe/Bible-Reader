@@ -2,8 +2,9 @@
 
     selftalk stats                 what each program costs and how long it runs
     selftalk validate              pre-flight checks, before spending credits
+    selftalk voices                list your ElevenLabs voices, to pick a voice_id
     selftalk plan                  what a generate run would call the API for
-    selftalk generate [--yes]      render the missing takes
+    selftalk generate [--sample N] render the takes, or just the first N of them
     selftalk build                 stitch takes into finished session tracks
 """
 
@@ -18,6 +19,7 @@ from .config import load_config
 from .estimate import estimate_program, format_duration, words_needed_for
 from .generate import (
     GenerationError,
+    list_voices,
     plan_generation,
     resolve_api_key,
     synthesize,
@@ -117,6 +119,28 @@ def cmd_plan(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_voices(args: argparse.Namespace) -> int:
+    """List the account's voices so a voice_id can be copied into config.yaml."""
+    try:
+        voices = list_voices(resolve_api_key(args.api_key))
+    except GenerationError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    if not voices:
+        print("No voices on this account.")
+        return 0
+
+    current = load_config(args.config).voice.voice_id
+    width = max(len(v["name"]) for v in voices)
+
+    for voice in voices:
+        marker = " <- current" if voice["voice_id"] == current else ""
+        print(f'{voice["voice_id"]}  {voice["name"]:<{width}}  {voice["labels"]}{marker}')
+
+    print(f"\n{len(voices)} voice(s). Copy an id into elevenlabs.voice_id in config.yaml.")
+    return 0
+
 def cmd_generate(args: argparse.Namespace) -> int:
     config = load_config(args.config)
     programs = _select(args.content, args.only)
@@ -135,7 +159,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
     total_chars = 0
     for program in programs:
         voice = config.voice_for(program.voice_overrides)
-        plan = plan_generation(program, voice, config.raw_dir)
+        plan = plan_generation(program, voice, config.raw_dir).sample(args.sample)
         plans.append((program, voice, plan))
         total_chars += plan.billable_chars
 
@@ -143,8 +167,9 @@ def cmd_generate(args: argparse.Namespace) -> int:
         print("Everything is already cached; nothing to generate.")
         return 0
 
+    scope = f" (sample of the first {args.sample} per program)" if args.sample else ""
     print(f"About to generate {sum(len(p.to_generate) for _, _, p in plans)} take(s), "
-          f"{total_chars} billable characters.")
+          f"{total_chars} billable characters{scope}.")
     if not args.yes:
         answer = input("Proceed? [y/N] ").strip().lower()
         if answer not in {"y", "yes"}:
@@ -168,7 +193,15 @@ def cmd_generate(args: argparse.Namespace) -> int:
                 return 1
         write_manifest(config.raw_dir, program, voice)
 
-    print("Done.")
+    if args.sample:
+        print(
+            "\nSample done. Hear it with:\n"
+            "  selftalk build --allow-missing"
+            + (f" --only {args.only}" if args.only else "")
+            + "\nThen re-run generate without --sample for the full track."
+        )
+    else:
+        print("Done.")
     return 0
 
 
@@ -217,9 +250,20 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("validate", parents=[common], help="pre-flight checks").set_defaults(func=cmd_validate)
     sub.add_parser("plan", parents=[common], help="show what generation would cost").set_defaults(func=cmd_plan)
 
+    p_voices = sub.add_parser("voices", parents=[common], help="list your ElevenLabs voices")
+    p_voices.add_argument("--api-key", help="overrides ELEVENLABS_API_KEY")
+    p_voices.set_defaults(func=cmd_voices)
+
     p_gen = sub.add_parser("generate", parents=[common], help="render missing takes via ElevenLabs")
     p_gen.add_argument("--yes", action="store_true", help="skip the cost confirmation")
     p_gen.add_argument("--api-key", help="overrides ELEVENLABS_API_KEY")
+    p_gen.add_argument(
+        "--sample",
+        type=int,
+        metavar="N",
+        help="generate only the first N takes per program — prove the voice and "
+             "pacing cheaply before committing to the whole track",
+    )
     p_gen.set_defaults(func=cmd_generate)
 
     p_build = sub.add_parser("build", parents=[common], help="assemble takes into finished tracks")
