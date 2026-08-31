@@ -39,7 +39,9 @@ pip install -r requirements.txt
 cp .env.example .env      # add your ELEVENLABS_API_KEY
 ```
 
-`pydub` needs `ffmpeg` on your PATH for the `build` step. Everything else
+`pydub` needs `ffmpeg` **and `ffprobe`** on your PATH for the `build` step — a
+normal `apt install ffmpeg` / `brew install ffmpeg` gives you both, but the
+`imageio-ffmpeg` pip package ships only `ffmpeg` and will fail on decode. Everything else
 (`stats`, `validate`, `plan`) works without it.
 
 Then set `elevenlabs.voice_id` in `config.yaml` to the voice you want.
