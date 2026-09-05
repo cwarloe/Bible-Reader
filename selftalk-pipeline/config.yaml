@@ -22,6 +22,11 @@ pacing:
   # Pushes generation-edge clicks into quiet rather than onto the join seam.
   clip_lead_ms: 125           # ~⅛ s of silence before the speech starts
   clip_tail_ms: 125           # ~⅛ s of silence after the speech ends
+  # Short linear amplitude ramp applied to the raw clip (not the padding) so
+  # the waveform always reaches zero at the clip edge.  The fade is inaudible
+  # as attack/release at these durations but eliminates click discontinuities.
+  clip_fade_in_ms: 15         # 15 ms fade-in on every raw take
+  clip_fade_out_ms: 25        # 25 ms fade-out on every raw take
 
 audio:
   output_format: "mp3"

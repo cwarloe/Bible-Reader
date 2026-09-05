@@ -58,6 +58,14 @@ class Pacing:
     that transient away from the audible join point.  Both default to 0 (no
     change) so existing assembled tracks are unaffected unless the config is
     updated.
+
+    `clip_fade_in_ms` / `clip_fade_out_ms` apply a short linear amplitude ramp
+    to the raw clip itself (not the silence padding) so the waveform always
+    reaches zero exactly at the clip edge.  This is the primary fix for audible
+    clicks: a non-zero sample at the cut point creates a discontinuity; the fade
+    removes it.  10–20 ms of fade-in and 20–30 ms of fade-out are inaudible as
+    attack/release but fully eliminate boundary pops.  Both default to 0 so
+    existing tracks assemble identically until the config is updated.
     """
 
     repeat: int = 1
@@ -68,6 +76,8 @@ class Pacing:
     words_per_minute: int = 105
     clip_lead_ms: int = 0
     clip_tail_ms: int = 0
+    clip_fade_in_ms: int = 0
+    clip_fade_out_ms: int = 0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -79,6 +89,8 @@ class Pacing:
             "words_per_minute": self.words_per_minute,
             "clip_lead_ms": self.clip_lead_ms,
             "clip_tail_ms": self.clip_tail_ms,
+            "clip_fade_in_ms": self.clip_fade_in_ms,
+            "clip_fade_out_ms": self.clip_fade_out_ms,
         }
 
 

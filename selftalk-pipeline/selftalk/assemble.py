@@ -73,8 +73,17 @@ def assemble_program(
 
         raw_clip = AudioSegment.from_file(path)
 
-        # Pad each take with dead silence so generation-edge clicks land in
-        # quiet rather than at an audible join point.
+        # Apply a short linear amplitude ramp so the waveform reaches zero at
+        # both clip edges.  A non-zero sample value at the cut point creates a
+        # step discontinuity that the listener hears as a click; the fade
+        # removes it without being audible as attack or release.
+        if pacing.clip_fade_in_ms:
+            raw_clip = raw_clip.fade_in(pacing.clip_fade_in_ms)
+        if pacing.clip_fade_out_ms:
+            raw_clip = raw_clip.fade_out(pacing.clip_fade_out_ms)
+
+        # Pad each take with dead silence so any remaining generation-edge
+        # transients land in quiet rather than at an audible join point.
         lead = AudioSegment.silent(duration=pacing.clip_lead_ms) if pacing.clip_lead_ms else AudioSegment.empty()
         tail = AudioSegment.silent(duration=pacing.clip_tail_ms) if pacing.clip_tail_ms else AudioSegment.empty()
         clip = lead + raw_clip + tail
