@@ -9,7 +9,7 @@ target_minutes: 8
 blocks:
   - id: opening-frame
     text: |
-      [calm, steady, authoritative, unhurried, measured delivery]
+      [warm, confident, direct — speaking to someone you believe in]
       These are the programs you choose to have... about yourself... and your spiritual strength, armor, and readiness.
 
   - id: recognition
@@ -26,7 +26,7 @@ blocks:
 
   - id: tricolon-armor
     text: |
-      [deliberate, steady cadence]
+      [natural rhythm, grounded conviction]
       You take up the armor.
       You stand your ground.
       And you remain unshakeable.
@@ -45,7 +45,7 @@ blocks:
 
   - id: descriptor-series
     text: |
-      [deliberate emphasis]
+      [clear emphasis, genuine energy]
       An accurate description of the person you choose to be would include the words: strong... watchful... courageous... grounded... protected... disciplined... prayerful... aware of your authority... and standing firm every day.
 
   - id: the-real-battle
@@ -59,7 +59,7 @@ blocks:
   - id: armor-pieces
     note: "Piece by piece, one line each — the pacing is the point."
     text: |
-      [measured, deliberate pacing]
+      [grounded and energetic]
       You fasten the belt of truth securely around your waist.
       You put on the breastplate of righteousness to guard your heart.
       You fit your feet with the readiness of the gospel of peace, standing ready on solid ground.
@@ -75,7 +75,7 @@ blocks:
 
   - id: trials-into-victory
     text: |
-      [steady and direct]
+      [warm and direct]
       You choose to be a person who turns every trial into an opportunity for victory. You make the most of every situation you encounter. You are steadfast in your own stand, but you are also actively praying for and supporting the endurance of others.
 
   - id: prayer
@@ -88,14 +88,14 @@ blocks:
 
   - id: tricolon-stand
     text: |
-      [deliberate cadence]
+      [natural, unhurried rhythm]
       You do not retreat.
       You do not waver.
       You stand firm.
 
   - id: every-day
     text: |
-      [confident and clear]
+      [confident and energetic]
       Every day, you put on the armor.
       Every day, you grow stronger in His might.
 

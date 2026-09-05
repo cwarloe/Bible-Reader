@@ -9,7 +9,7 @@ target_minutes: 8
 blocks:
   - id: opening-frame
     text: |
-      [calm, steady, authoritative, unhurried, measured delivery]
+      [warm, confident, direct — speaking to someone you believe in]
       These are the programs you choose to have... about yourself... and your walk in wisdom, light, and stewardship.
 
   - id: recognition
@@ -26,7 +26,7 @@ blocks:
 
   - id: tricolon-discern
     text: |
-      [deliberate, steady cadence]
+      [natural rhythm, grounded conviction]
       You discern what is good.
       You walk in the light.
       And you live in the truth.
@@ -45,7 +45,7 @@ blocks:
 
   - id: descriptor-series
     text: |
-      [deliberate emphasis]
+      [clear emphasis, genuine energy]
       An accurate description of the person you choose to be would include the words: wise... watchful... discerning... grateful... honest... diligent... Spirit-filled... aware of your responsibility... and making progress every day.
 
   - id: leave-behind
@@ -54,7 +54,7 @@ blocks:
 
   - id: fruit-of-light
     text: |
-      [measured and clear]
+      [natural and clear]
       You recognize that you once walked in darkness, but now you are light in the Lord. You choose to produce the fruit of the light: goodness, righteousness, and truth in every area of your life. You take no part in unfruitful works, but instead expose them through your integrity, clarity, and steadfast example.
 
   - id: redeem-the-time
@@ -63,7 +63,7 @@ blocks:
 
   - id: tricolon-filled
     text: |
-      [deliberate, steady cadence]
+      [natural rhythm, grounded conviction]
       You do not give in to excess or escape.
       You are filled with the Spirit.
       And you live with clarity of mind.
@@ -74,7 +74,7 @@ blocks:
 
   - id: work-as-service
     text: |
-      [steady and direct]
+      [warm and direct]
       You choose to practice mutual honor and respect out of reverence for Christ. In your daily work and your professional life, you execute your responsibilities with integrity, excellence, and a sincere heart. You do not work merely as a people-pleaser or to win human favor; you work as a servant of Christ, doing the will of God from the heart.
 
   - id: reward
@@ -87,7 +87,7 @@ blocks:
 
   - id: every-day
     text: |
-      [confident and clear]
+      [confident and energetic]
       Every day, you redeem your time.
       Every day, you walk in wisdom.
 

@@ -15,7 +15,7 @@ blocks:
     note: "Sets delivery for the take; every later block inherits the voice settings, not the tag."
     repeat: 1
     text: |
-      [calm, steady, authoritative, unhurried, measured delivery]
+      [warm, confident, direct — speaking to someone you believe in]
       This is how I choose to walk each day.
 
   - id: walk-worthy
@@ -68,7 +68,7 @@ blocks:
 synthesis:
   id: synthesis-you
   text: |
-    [deliberate, steady cadence]
+    [natural rhythm, grounded conviction]
     This is how you choose to walk each day.
     You walk in a manner worthy of the calling to which you have been called. You walk in all humility, gentleness, and patience, bearing with others in love and guarding the bond of peace.
     You are no longer tossed to and fro by deceitful schemes. You speak the truth in love, growing up in every way into maturity in Christ.

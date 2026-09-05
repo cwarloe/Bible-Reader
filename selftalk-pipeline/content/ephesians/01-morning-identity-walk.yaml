@@ -14,7 +14,7 @@ blocks:
   - id: opening-frame
     note: "Bookend. The closing block mirrors this one word for word."
     text: |
-      [calm, steady, authoritative, unhurried, measured delivery]
+      [warm, confident, direct — speaking to someone you believe in]
       These are the programs you choose to have... about yourself... and your identity and daily walk in Christ.
 
   - id: recognition
@@ -33,7 +33,7 @@ blocks:
   - id: tricolon-put-on
     note: "Tricolon. Line breaks are load-bearing — v3 treats each line as its own thought."
     text: |
-      [deliberate, steady cadence]
+      [natural rhythm, grounded conviction]
       You put off the old.
       You renew your mind.
       And you put on the new.
@@ -53,7 +53,7 @@ blocks:
   - id: descriptor-series
     note: "The descriptor list — ellipses, no conjunctions, one breath per word."
     text: |
-      [deliberate emphasis]
+      [clear emphasis, genuine energy]
       An accurate description of the person you choose to be would include the words: humble... gentle... patient... united... truthful... kind... tenderhearted... forgiving... actively growing... aware of your calling... and making progress every day.
 
   - id: leave-behind
@@ -66,7 +66,7 @@ blocks:
 
   - id: tricolon-body
     text: |
-      [measured, deliberate pacing]
+      [grounded and energetic]
       You are part of a body joined and held together by every supporting ligament.
       You do your part.
       You work properly.
@@ -78,7 +78,7 @@ blocks:
 
   - id: anger
     text: |
-      [steady and direct]
+      [warm and direct]
       When anger arises, you choose not to sin. You never let the sun go down on your anger, and you give no place, no foothold, and no opportunity to the enemy.
 
   - id: honest-work
@@ -95,7 +95,7 @@ blocks:
 
   - id: tricolon-put-away
     text: |
-      [deliberate cadence]
+      [natural, unhurried rhythm]
       You put away all bitterness.
       You put away all wrath and anger.
       And you remove every form of malice.
@@ -106,7 +106,7 @@ blocks:
 
   - id: every-day
     text: |
-      [confident and clear]
+      [confident and energetic]
       Every day, you renew your mind.
       Every day, you walk in love.
 
