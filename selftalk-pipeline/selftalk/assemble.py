@@ -71,7 +71,14 @@ def assemble_program(
             missing.append(block_id)
             continue
 
-        clip = AudioSegment.from_file(path)
+        raw_clip = AudioSegment.from_file(path)
+
+        # Pad each take with dead silence so generation-edge clicks land in
+        # quiet rather than at an audible join point.
+        lead = AudioSegment.silent(duration=pacing.clip_lead_ms) if pacing.clip_lead_ms else AudioSegment.empty()
+        tail = AudioSegment.silent(duration=pacing.clip_tail_ms) if pacing.clip_tail_ms else AudioSegment.empty()
+        clip = lead + raw_clip + tail
+
         repeat_gap = AudioSegment.silent(duration=repeat_gap_ms)
 
         for index in range(repeat):

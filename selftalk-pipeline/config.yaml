@@ -18,6 +18,10 @@ pacing:
   # Anything set here applies to every program in the library.
   pause_transition_ms: 3500   # before a daytime synthesis coda
   pause_tag_ms: 700           # what one [pause] tag is worth when estimating
+  # Dead silence added before and after every raw take at assembly time.
+  # Pushes generation-edge clicks into quiet rather than onto the join seam.
+  clip_lead_ms: 125           # ~⅛ s of silence before the speech starts
+  clip_tail_ms: 125           # ~⅛ s of silence after the speech ends
 
 audio:
   output_format: "mp3"

@@ -51,6 +51,13 @@ class Pacing:
 
     `repeat` is the Helmstetter triplication count: how many times each block is
     spoken back to back before moving on.
+
+    `clip_lead_ms` / `clip_tail_ms` pad each raw take with dead silence before
+    and after the speech.  ElevenLabs occasionally introduces a faint click at
+    the very start or end of a generation; a few milliseconds of cushion pushes
+    that transient away from the audible join point.  Both default to 0 (no
+    change) so existing assembled tracks are unaffected unless the config is
+    updated.
     """
 
     repeat: int = 1
@@ -59,6 +66,8 @@ class Pacing:
     pause_transition_ms: int = 3500
     pause_tag_ms: int = 700
     words_per_minute: int = 105
+    clip_lead_ms: int = 0
+    clip_tail_ms: int = 0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -68,6 +77,8 @@ class Pacing:
             "pause_transition_ms": self.pause_transition_ms,
             "pause_tag_ms": self.pause_tag_ms,
             "words_per_minute": self.words_per_minute,
+            "clip_lead_ms": self.clip_lead_ms,
+            "clip_tail_ms": self.clip_tail_ms,
         }
 
 
