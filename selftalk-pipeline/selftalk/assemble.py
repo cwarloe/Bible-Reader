@@ -134,27 +134,34 @@ def _extract_noise_sample(
     return combined[:target_ms]
 
 
-def _make_noise_pad(noise_sample, duration_ms: int, fade_ms: int, *, fade_at_end: bool):
-    """Tile *noise_sample* to *duration_ms* and apply a linear amplitude fade.
+def _make_noise_pad(
+    noise_sample,
+    duration_ms: int,
+    *,
+    fade_in_ms: int = 0,
+    fade_out_ms: int = 0,
+):
+    """Tile *noise_sample* to *duration_ms* and apply linear amplitude fades at either edge.
 
-    *fade_at_end=True*  — the pad fades to zero at its right edge (used on the
-                          lead so the noise blends into the clip's fade-in).
-    *fade_at_end=False* — the pad fades in from zero at its left edge (used on
-                          the tail so the clip's fade-out blends into noise).
+    fade_in_ms  — ramp from zero at the left edge.  On the *lead* pad this is
+                  the gap-facing edge (noise emerging from inter-block silence);
+                  on the *tail* pad it cross-fades with the clip's fade-out.
+    fade_out_ms — ramp to zero at the right edge.  On the *lead* pad it
+                  cross-fades with the clip's fade-in; on the *tail* pad this
+                  is the gap-facing edge (noise entering inter-block silence).
 
-    Together with the clip's own fade_in / fade_out the two fades form a
-    cross-fade: as the noise goes to zero the clip comes up, and vice versa.
+    Both fades are applied independently, so the pad can ramp in at one end and
+    out at the other — which is the normal case.  Each is clamped to duration_ms
+    so they never overlap in a way that causes pydub to raise.
     """
     pad = noise_sample
     while len(pad) < duration_ms:
         pad = pad + noise_sample
     pad = pad[:duration_ms]
-    fade_ms = min(fade_ms, duration_ms)
-    if fade_ms > 0:
-        if fade_at_end:
-            pad = pad.fade_out(fade_ms)
-        else:
-            pad = pad.fade_in(fade_ms)
+    if fade_in_ms > 0:
+        pad = pad.fade_in(min(fade_in_ms, duration_ms))
+    if fade_out_ms > 0:
+        pad = pad.fade_out(min(fade_out_ms, duration_ms))
     return pad
 
 
@@ -223,8 +230,10 @@ def assemble_program(
                 _make_noise_pad(
                     noise_sample,
                     pacing.clip_lead_ms,
-                    pacing.clip_fade_in_ms,
-                    fade_at_end=True,
+                    # Left edge: fade in from inter-block silence.
+                    # Right edge: cross-fades with the clip's own fade-in.
+                    fade_in_ms=pacing.gap_fade_ms,
+                    fade_out_ms=pacing.clip_fade_in_ms,
                 )
                 if pacing.clip_lead_ms
                 else AudioSegment.empty()
@@ -233,8 +242,10 @@ def assemble_program(
                 _make_noise_pad(
                     noise_sample,
                     pacing.clip_tail_ms,
-                    pacing.clip_fade_out_ms,
-                    fade_at_end=False,
+                    # Left edge: cross-fades with the clip's own fade-out.
+                    # Right edge: fade out to inter-block silence.
+                    fade_in_ms=pacing.clip_fade_out_ms,
+                    fade_out_ms=pacing.gap_fade_ms,
                 )
                 if pacing.clip_tail_ms
                 else AudioSegment.empty()

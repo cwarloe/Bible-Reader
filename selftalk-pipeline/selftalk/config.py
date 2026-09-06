@@ -66,6 +66,13 @@ class Pacing:
     removes it.  10–20 ms of fade-in and 20–30 ms of fade-out are inaudible as
     attack/release but fully eliminate boundary pops.  Both default to 0 so
     existing tracks assemble identically until the config is updated.
+
+    `gap_fade_ms` is the fade applied at the silence-facing edge of each noise
+    pad — the edge that meets the inter-block or inter-repeat gap.  Without it,
+    the noise pad abruptly drops to (or jumps from) absolute silence, which the
+    listener hears as a hard cutoff.  40 ms is long enough to feel smooth while
+    short enough not to intrude on the breathing-room pauses.  Defaults to 0 so
+    existing tracks assemble identically until the config is updated.
     """
 
     repeat: int = 1
@@ -78,6 +85,7 @@ class Pacing:
     clip_tail_ms: int = 0
     clip_fade_in_ms: int = 0
     clip_fade_out_ms: int = 0
+    gap_fade_ms: int = 0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -91,6 +99,7 @@ class Pacing:
             "clip_tail_ms": self.clip_tail_ms,
             "clip_fade_in_ms": self.clip_fade_in_ms,
             "clip_fade_out_ms": self.clip_fade_out_ms,
+            "gap_fade_ms": self.gap_fade_ms,
         }
 
 
