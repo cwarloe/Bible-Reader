@@ -6,21 +6,14 @@ perspective: first_person
 source: "Ephesians 4:1-32"
 target_minutes: 8
 
-# Per-track pacing overrides — applied on top of the global config.yaml values.
-# Daytime has repeat=3 with 1100 ms gaps between repeats, so noise pads cycle
-# many more times than in morning tracks. Two adjustments make them imperceptible:
-#   noise_pad_gain_db  drop pads from ~-64 dBFS to ~-74 dBFS — quiet enough to
-#                      sit below conscious notice while still bridging the dead-air
-#                      contrast that the fade logic was introduced to avoid.
-#   gap_fade_ms        longer fade at the silence-facing pad edge so the noise
-#                      texture eases in/out over 80 ms instead of 40 ms.
-#   clip_lead_ms /     widened to 110 ms to give both fades (gap_fade_ms=80 plus
-#   clip_tail_ms       clip_fade_in/out) comfortable room without overlapping.
+# Per-track pacing override.
+# Continuous noise fills all inter-repeat and inter-block gaps, so there is
+# never a silence↔noise transition for the listener to notice.  noise_pad_gain_db
+# sets the level of that constant background — -10 dB drops the room tone from
+# ~-64 dBFS to ~-74 dBFS, keeping it below conscious notice while still
+# maintaining a consistent acoustic floor throughout the track.
 pacing:
   noise_pad_gain_db: -10
-  gap_fade_ms: 80
-  clip_lead_ms: 110
-  clip_tail_ms: 110
 
 # Daytime is "The Conditioning". Each statement below is generated ONCE and
 # spoken three times by the assembler, so a 15-line drill costs 15 generations

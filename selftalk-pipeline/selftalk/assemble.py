@@ -134,6 +134,14 @@ def _extract_noise_sample(
     return combined[:target_ms]
 
 
+def _tile_noise(noise_sample, duration_ms: int):
+    """Tile *noise_sample* to exactly *duration_ms* by repeating as needed."""
+    pad = noise_sample
+    while len(pad) < duration_ms:
+        pad = pad + noise_sample
+    return pad[:duration_ms]
+
+
 def _make_noise_pad(
     noise_sample,
     duration_ms: int,
@@ -143,21 +151,18 @@ def _make_noise_pad(
 ):
     """Tile *noise_sample* to *duration_ms* and apply linear amplitude fades at either edge.
 
-    fade_in_ms  — ramp from zero at the left edge.  On the *lead* pad this is
-                  the gap-facing edge (noise emerging from inter-block silence);
-                  on the *tail* pad it cross-fades with the clip's fade-out.
-    fade_out_ms — ramp to zero at the right edge.  On the *lead* pad it
-                  cross-fades with the clip's fade-in; on the *tail* pad this
-                  is the gap-facing edge (noise entering inter-block silence).
+    When gaps are filled with continuous noise (the normal path), only one of
+    the two fades is ever non-zero:
+      lead pad  — fade_out_ms cross-fades with the clip's own fade_in
+      tail pad  — fade_in_ms  cross-fades with the clip's own fade_out
 
-    Both fades are applied independently, so the pad can ramp in at one end and
-    out at the other — which is the normal case.  Each is clamped to duration_ms
+    The gap-facing edge no longer needs a fade because the gap itself is
+    textured noise at the same level — there is no silence to ramp into.
+
+    Both fades are applied independently and each is clamped to duration_ms
     so they never overlap in a way that causes pydub to raise.
     """
-    pad = noise_sample
-    while len(pad) < duration_ms:
-        pad = pad + noise_sample
-    pad = pad[:duration_ms]
+    pad = _tile_noise(noise_sample, duration_ms)
     if fade_in_ms > 0:
         pad = pad.fade_in(min(fade_in_ms, duration_ms))
     if fade_out_ms > 0:
@@ -182,14 +187,15 @@ def assemble_program(
     missing: list[str] = []
     used = 0
 
-    # --- Noise-texture pad (built fresh from this batch's clips) -----------
-    # ElevenLabs generates a consistent background noise floor (~-64 dBFS).
-    # Using absolute zero-silence pads creates a 64+ dB contrast the ear hears
-    # as dead air.  Instead we extract the quietest interior windows from the
-    # batch's own raw clips and tile them into a noise-texture reference the
-    # lead/tail pads are sliced from.  Falls back to zero-silence if no clip
-    # yields a window below the threshold (e.g. on a first run with no cached
-    # takes yet — though in that case assembly would fail anyway).
+    # --- Noise-texture reference (built fresh from this batch's clips) ------
+    # ElevenLabs clips carry a consistent background noise floor (~-64 dBFS).
+    # The strategy here is continuous noise: rather than inserting absolute
+    # silence between clips/repeats and trying to fade in/out of it, ALL gaps
+    # are filled with the same tiled noise at a reduced level (noise_pad_gain_db,
+    # default 0 = full clip level, daytime uses -10 dBFS for subtlety).  The
+    # listener hears one consistent room tone from start to finish; voices
+    # appear and disappear on top of it, eliminating any on/off toggling.
+    # Falls back to zero-silence everywhere if no clip yields a noise window.
     raw_dir_for_program = config.raw_dir / program.slug
     existing_clips = (
         sorted(raw_dir_for_program.glob(f"*.{ext}"))
@@ -201,11 +207,10 @@ def assemble_program(
         if existing_clips
         else None
     )
-    # Optionally attenuate the noise sample so pads are quieter than the clip
-    # noise floor.  On tracks with many repeat-gap cycles the full-level noise
-    # pad can become perceptible; a negative noise_pad_gain_db (e.g. −10)
-    # drops the pads far enough below the clip floor that they blend into the
-    # background rather than drawing attention.
+    # Apply the per-track gain to the reference once; all subsequent tiling
+    # inherits this level automatically — pads, inter-repeat gaps, and inter-
+    # block gaps all share the same noise floor so there is nothing to fade
+    # across at the gap edge.
     if noise_sample is not None and pacing.noise_pad_gain_db != 0.0:
         noise_sample = noise_sample.apply_gain(pacing.noise_pad_gain_db)
 
@@ -219,27 +224,24 @@ def assemble_program(
 
         raw_clip = AudioSegment.from_file(path)
 
-        # Apply a short linear amplitude ramp so the waveform reaches zero at
-        # both clip edges.  A non-zero sample value at the cut point creates a
-        # step discontinuity that the listener hears as a click; the fade
-        # removes it without being audible as attack or release.
+        # Short linear amplitude ramp at both clip edges eliminates click
+        # discontinuities without being audible as attack/release.
         if pacing.clip_fade_in_ms:
             raw_clip = raw_clip.fade_in(pacing.clip_fade_in_ms)
         if pacing.clip_fade_out_ms:
             raw_clip = raw_clip.fade_out(pacing.clip_fade_out_ms)
 
-        # Build the lead/tail pads.  When a noise sample is available, each pad
-        # holds the ambient noise floor of the recording and fades toward zero
-        # at the edge that meets the clip — forming a cross-fade with the clip's
-        # own fade_in / fade_out so there is no moment of absolute silence.
+        # Build lead/tail pads.  With continuous-noise gaps the pad only needs
+        # to cross-fade with the clip's own edge fade — there is no silence to
+        # ramp in/out of, so gap_fade_ms is not used here.  The silence fallback
+        # path keeps the gap_fade_ms behaviour for environments with no clips.
         if noise_sample is not None:
             lead = (
                 _make_noise_pad(
                     noise_sample,
                     pacing.clip_lead_ms,
-                    # Left edge: fade in from inter-block silence.
-                    # Right edge: cross-fades with the clip's own fade-in.
-                    fade_in_ms=pacing.gap_fade_ms,
+                    # Gap-facing edge matches the continuous gap noise — no fade.
+                    # Clip-facing edge cross-fades with the clip's own fade-in.
                     fade_out_ms=pacing.clip_fade_in_ms,
                 )
                 if pacing.clip_lead_ms
@@ -249,16 +251,18 @@ def assemble_program(
                 _make_noise_pad(
                     noise_sample,
                     pacing.clip_tail_ms,
-                    # Left edge: cross-fades with the clip's own fade-out.
-                    # Right edge: fade out to inter-block silence.
+                    # Clip-facing edge cross-fades with the clip's own fade-out.
+                    # Gap-facing edge matches the continuous gap noise — no fade.
                     fade_in_ms=pacing.clip_fade_out_ms,
-                    fade_out_ms=pacing.gap_fade_ms,
                 )
                 if pacing.clip_tail_ms
                 else AudioSegment.empty()
             )
+            # Inter-repeat and trailing gaps: noisy, not silent.
+            def _noise_gap(ms: int):
+                return _tile_noise(noise_sample, ms) if ms else AudioSegment.empty()
         else:
-            # Fallback: zero-silence pads (original behaviour, no noise sample).
+            # Fallback: zero-silence pads with gap fades (original behaviour).
             lead = (
                 AudioSegment.silent(duration=pacing.clip_lead_ms)
                 if pacing.clip_lead_ms
@@ -269,18 +273,18 @@ def assemble_program(
                 if pacing.clip_tail_ms
                 else AudioSegment.empty()
             )
+            def _noise_gap(ms: int):
+                return AudioSegment.silent(duration=ms) if ms else AudioSegment.empty()
 
         clip = lead + raw_clip + tail
-
-        repeat_gap = AudioSegment.silent(duration=repeat_gap_ms)
 
         for index in range(repeat):
             master += clip
             if index < repeat - 1:
-                master += repeat_gap
+                master += _noise_gap(repeat_gap_ms)
 
         if trailing_gap_ms:
-            master += AudioSegment.silent(duration=trailing_gap_ms)
+            master += _noise_gap(trailing_gap_ms)
         used += 1
 
     if missing and strict:

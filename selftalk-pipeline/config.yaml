@@ -20,13 +20,12 @@ pacing:
   pause_tag_ms: 700           # what one [pause] tag is worth when estimating
   # Pad added before and after every raw take at assembly time.
   # When a noise sample can be extracted from the batch (the normal case),
-  # these pads are filled with the clip's own ambient noise floor (~-64 dBFS)
-  # rather than absolute silence, so there is no perceptible dead-air gap.
-  # Each pad fades at BOTH edges: the clip-facing edge cross-fades with the
-  # clip's own fade (see below); the gap-facing edge fades to/from silence
-  # over gap_fade_ms so there is no hard wall between noise and dead air.
-  # 80 ms gives comfortable room for both fades; raise toward 125 ms if
-  # generation-edge artefacts return.
+  # ALL inter-clip and inter-block gaps are also filled with the same tiled
+  # noise at noise_pad_gain_db level, so the listener hears one consistent
+  # room tone throughout — there is no silence for the ear to notice.
+  # The pads only need to cross-fade with the clip's own edge fades (below);
+  # the gap-facing edge is already at the same noise level, so no additional
+  # fade is required there.  80 ms gives comfortable room for those fades.
   clip_lead_ms: 80            # noise-textured pad before the speech starts
   clip_tail_ms: 80            # noise-textured pad after the speech ends
   # Short linear amplitude ramp applied to the raw clip (not the padding) so
@@ -34,11 +33,9 @@ pacing:
   # as attack/release at these durations but eliminates click discontinuities.
   clip_fade_in_ms: 15         # 15 ms fade-in on every raw take
   clip_fade_out_ms: 25        # 25 ms fade-out on every raw take
-  # Fade applied at the gap-facing (silence-facing) edge of each noise pad.
-  # Without this the pad abruptly drops to absolute silence at the inter-block
-  # pause, which the ear hears as a hard cutoff.  40 ms feels smooth without
-  # shortening the breathing-room pauses perceptibly.
-  gap_fade_ms: 40             # noise→silence and silence→noise fade duration
+  # gap_fade_ms: only used when no noise sample is available (silence fallback).
+  # Leave unset; with continuous noise this parameter has no effect.
+  # gap_fade_ms: 40
 
 audio:
   output_format: "mp3"
