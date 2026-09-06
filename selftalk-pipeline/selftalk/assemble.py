@@ -201,6 +201,13 @@ def assemble_program(
         if existing_clips
         else None
     )
+    # Optionally attenuate the noise sample so pads are quieter than the clip
+    # noise floor.  On tracks with many repeat-gap cycles the full-level noise
+    # pad can become perceptible; a negative noise_pad_gain_db (e.g. −10)
+    # drops the pads far enough below the clip floor that they blend into the
+    # background rather than drawing attention.
+    if noise_sample is not None and pacing.noise_pad_gain_db != 0.0:
+        noise_sample = noise_sample.apply_gain(pacing.noise_pad_gain_db)
 
     for block_id, repeat, repeat_gap_ms, trailing_gap_ms in plan_layout(program, pacing):
         block = blocks_by_id[block_id]

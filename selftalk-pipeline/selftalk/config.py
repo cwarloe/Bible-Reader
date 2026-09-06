@@ -73,6 +73,17 @@ class Pacing:
     listener hears as a hard cutoff.  40 ms is long enough to feel smooth while
     short enough not to intrude on the breathing-room pauses.  Defaults to 0 so
     existing tracks assemble identically until the config is updated.
+
+    `noise_pad_gain_db` applies a gain offset (in dBFS) to the noise-texture
+    pads before they are assembled into the track.  ElevenLabs clips carry a
+    background noise floor of approximately −64 dBFS; the pads are extracted
+    from that same noise floor, so by default they match the clip exactly.  On
+    tracks with many repeat-gap cycles (daytime: 3×), that floor can become
+    perceptible as it appears and disappears around each repeat.  A negative
+    value (e.g. −10) drops the pads to ~−74 dBFS — still far above digital
+    silence so the hard-contrast problem is avoided, but quiet enough that the
+    texture blends into the background rather than pulling attention.  Defaults
+    to 0 (no change) so existing assembled tracks are unaffected.
     """
 
     repeat: int = 1
@@ -86,6 +97,7 @@ class Pacing:
     clip_fade_in_ms: int = 0
     clip_fade_out_ms: int = 0
     gap_fade_ms: int = 0
+    noise_pad_gain_db: float = 0.0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -100,6 +112,7 @@ class Pacing:
             "clip_fade_in_ms": self.clip_fade_in_ms,
             "clip_fade_out_ms": self.clip_fade_out_ms,
             "gap_fade_ms": self.gap_fade_ms,
+            "noise_pad_gain_db": self.noise_pad_gain_db,
         }
 
 
