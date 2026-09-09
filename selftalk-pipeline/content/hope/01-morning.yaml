@@ -1,0 +1,89 @@
+slug: hope-01-morning
+title: "Hope & Redemption — Morning"
+suite: hope
+track_type: morning
+perspective: second_person
+source: "Joel 2:25, Romans 8:28, Philippians 1:6, Lamentations 3:21-23, Isaiah 43:18-19, 1 Peter 1:3-4"
+target_minutes: 8
+
+# The lie being countered:
+# "It's too late for me. I've wasted too much time. I'm too old to change.
+#  The window has closed. My best years are behind me. The mistakes I made
+#  cost me something I can't get back. Other people have a future — not me.
+#  God can work in people who got it right earlier, but not someone with
+#  my history."
+
+blocks:
+  - id: opening-frame
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      These are the programs you choose to have... about yourself... and about the future that is still in front of you — because there is one.
+
+  - id: recognition
+    text: |
+      You are not too late. You have not missed the window. The God who restores the years the locusts have eaten is the same God who holds your future — and He is not limited by your history, your age, or the choices you made before you knew better. He works redemptively in broken timelines. That is His specialty.
+
+  - id: mirror-check
+    text: |
+      When you look at yourself in the mirror, you see someone with a future. You see someone whose story is not over. You see someone whose best days are not necessarily behind them, because you serve a God who is not bound by what you expected.
+
+  - id: new-every-morning
+    text: |
+      His mercies are new every morning. Not just on the mornings you got it right. Not just on the mornings you feel like a new person. Every morning — including this one — you begin again with access to the compassion of God. His faithfulness is not diminished by your failures, and it does not run out.
+
+  - id: he-restores
+    text: |
+      God restores what was lost. He restores the years. He redeems the time. What looks like a subtracted season to you can be multiplied by God in ways you cannot project. You do not have to calculate the math — you have to trust the One who holds the future.
+
+  - id: tricolon-hope
+    text: |
+      [natural rhythm, grounded conviction]
+      Your story is not over.
+      Your best chapter may not be written yet.
+      God is still working in your life.
+
+  - id: new-thing
+    text: |
+      Do not dwell only on the former things. God says: I am doing a new thing. Even now it springs up. He has a track record of making ways in the wilderness and rivers in the desert — and that track record includes your life, including the parts of it that look most like wasteland to you.
+
+  - id: he-will-complete
+    text: |
+      He who began a good work in you will carry it to completion. That work did not stall because you stumbled. It did not expire because of your age. The work He started in you is still in progress, and the One who started it is faithful to finish it.
+
+  - id: descriptor-series
+    text: |
+      [clear emphasis, genuine energy]
+      An accurate description of who you are today includes the words: still in process... still growing... not finished... not too old... not too far gone... not counted out... and someone whose next faithful step matters more than any regret about the last season.
+
+  - id: living-hope
+    text: |
+      You have a living hope — not a theoretical one, not a distant one. A living, active, certain hope through the resurrection of Jesus Christ. That hope does not disappoint. It does not expire. It is kept for you, and it is not diminished by what you have been through.
+
+  - id: all-things-together
+    text: |
+      God works all things together for good — for those who love Him and are called according to His purpose. All things. That includes the things you count as losses. He is not working in spite of your story — He is working through it.
+
+  - id: tricolon-redemption
+    text: |
+      [natural rhythm, grounded conviction]
+      Nothing faithful is wasted.
+      Nothing broken is beyond Him.
+      Nothing in your past cancels your future.
+
+  - id: every-day
+    text: |
+      [confident and energetic]
+      Every day, you choose hope over regret.
+      Every day, you take the next faithful step — and that step matters.
+
+  - id: investment
+    text: |
+      You believe that today's faithfulness compounds. The step you take today — however ordinary, however small — is not nothing. It is the beginning of something God is building in you, through you, and for you. You do not need a grand restart. You need today.
+
+  - id: knowing
+    text: |
+      You know that you are not too late. You know that God redeems, restores, and surprises. You know that the window is not closed — because the One who holds the future opened it, and He has not shut it.
+
+  - id: closing-anchor
+    text: |
+      Those are the programs you choose to have about hope and your future. You already know the truth: you are not counted out, you are not too old, and the redemptive work of God is not behind you — it is still in front of you... and today is a great day to live like it.

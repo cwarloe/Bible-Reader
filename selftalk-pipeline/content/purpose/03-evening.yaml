@@ -1,0 +1,37 @@
+slug: purpose-03-evening
+title: "Purpose & Calling — Evening"
+suite: purpose
+track_type: evening
+perspective: second_person
+source: "Psalm 57:2, Proverbs 19:21, Romans 8:28, Philippians 1:6"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      The day is done. Take a moment to recognize that you showed up today — to your work, to your relationships, to the ordinary moments that are the material of a purposeful life. That matters.
+
+  - id: nothing-wasted
+    text: |
+      Even the parts of today that did not go the way you planned — God is working those too. He is the One who causes all things to work together for good. That includes the meeting that went sideways, the conversation you wish had gone differently, and the task you did not finish. Nothing faithful is wasted in His economy.
+
+  - id: he-will-complete
+    text: |
+      He who began a good work in you will carry it on to completion. That means today was not the last chapter. You are in the middle of something God is actively working in and through you — and He finishes what He starts.
+
+  - id: plans-remain
+    text: |
+      Many are the plans in your heart, but it is God's purpose that prevails. That is not a threat — it is a relief. The outcome of your life is not dependent on whether you executed every day perfectly. His purpose for you is more durable than your mistakes.
+
+  - id: tomorrow-comes-fresh
+    text: |
+      Tomorrow is another day to show up to what you were made for. The calling does not expire overnight. You will wake up still called, still gifted, still needed, still purposed. Rest in that.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You did not miss the point today.
+      You are still on purpose.
+      He is still working.
+      Rest well in that.

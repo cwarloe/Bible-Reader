@@ -1,0 +1,71 @@
+slug: fear-02-daytime
+title: "Fear & Anxiety — Daytime Drill"
+suite: fear
+track_type: daytime
+perspective: first_person
+source: "Philippians 4:6-7, Isaiah 41:10, Psalm 23, 1 John 4:18, Matthew 6:34"
+target_minutes: 6
+
+pacing:
+  noise_pad_gain_db: -10
+
+blocks:
+  - id: opening-tone
+    repeat: 1
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      I live in peace. I am not ruled by fear.
+
+  - id: not-anxious
+    text: "I am not anxious. I bring my worries to God and receive His peace in return."
+
+  - id: he-is-with-me
+    text: "God is with me. He strengthens me, He helps me, He upholds me. I do not face anything alone."
+
+  - id: do-not-fear
+    text: "I do not fear the future. God holds what I cannot see and He is not surprised by anything coming my way."
+
+  - id: called-by-name
+    text: "I am called by name. When I pass through deep water, He is with me. I am not consumed."
+
+  - id: peace-beyond-understanding
+    text: "The peace of God, which surpasses understanding, guards my heart and mind. That is what happens when I pray."
+
+  - id: present
+    text: "I live today — not in tomorrow's fears. I do not borrow trouble. Each day brings what I need for that day."
+
+  - id: perfect-love
+    text: "I am loved with a perfect love, and perfect love drives out fear. I do not have to be afraid."
+
+  - id: what-i-think-about
+    text: "I choose what I dwell on. I fix my mind on what is true, honorable, and good — not on worst-case thinking."
+
+  - id: he-goes-before
+    text: "He goes before me into every situation I will face today. I walk into nothing unprepared and nothing alone."
+
+  - id: trust
+    text: "I trust Him with today, with tomorrow, and with everything I cannot control."
+
+  - id: settled
+    text: "I am settled in my spirit. Anxiety does not get to drive. Peace is my natural state."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words, I reinforce the choice to live in peace. I am not ruled by fear. I am grounded in God."
+
+  - id: closing-anchor
+    text: "I live in peace. I am not ruled by fear."
+
+synthesis:
+  id: synthesis-you
+  text: |
+    [natural rhythm, grounded conviction]
+    You live in peace. You are not ruled by fear.
+    You bring your worries to God and receive His peace in return. The peace of God, which surpasses understanding, guards your heart and mind. That is what happens when you pray.
+    God is with you. He strengthens you, He helps you, He upholds you. You do not face anything alone. You are called by name, and when you pass through deep water, He is with you.
+    You do not fear the future. God holds what you cannot see, and He is not surprised by anything coming your way.
+    You live today — not in tomorrow's fears. You do not borrow trouble. Each day brings exactly what you need for that day.
+    You are loved with a perfect love, and perfect love drives out fear. You do not have to be afraid.
+    You choose what you dwell on. You fix your mind on what is true, honorable, and good — not on worst-case thinking.
+    He goes before you into every situation you will face. You walk into nothing unprepared and nothing alone.
+    Each time you hear these words, you reinforce the choice to live in peace. You are not ruled by fear. You are grounded in God.
+    You live in peace. You are not ruled by fear.

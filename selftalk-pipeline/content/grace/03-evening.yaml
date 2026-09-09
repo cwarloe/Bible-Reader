@@ -1,0 +1,37 @@
+slug: grace-03-evening
+title: "Grace & Forgiveness — Evening"
+suite: grace
+track_type: evening
+perspective: second_person
+source: "1 John 1:9, Lamentations 3:22-23, Psalm 103:8-14, Romans 8:1"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      Whatever happened today — the things you handled well and the things you did not — there is grace for all of it. His mercies are new every morning. That means tonight is the last night of this day, and tomorrow begins completely fresh.
+
+  - id: bring-it-to-him
+    text: |
+      If you sinned today, bring it to Him. He is faithful and just to forgive. That is not a transaction you have to agonize over — it is a promise you can simply receive. Name it, give it up, and let it go. He takes it.
+
+  - id: not-accumulating
+    text: |
+      You do not carry debt forward with God. Guilt does not stack. Shame does not compound. Each day closes with the ledger clear, and tomorrow you will stand before Him with a clean slate. That is not cheap grace — that is the power of the cross.
+
+  - id: he-does-not-remember
+    text: |
+      The failure you keep replaying — God is not replaying it. He does not bring up what He has forgiven. The voice that keeps returning it to you is not His voice. His voice says: forgiven. Accepted. Clean.
+
+  - id: morning-mercies
+    text: |
+      Great is His faithfulness. His mercies are not exhausted. They will be there when you wake up — as reliable as the morning, as certain as the sun. You go to sleep under grace, and you will wake up under grace.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You are not what you did wrong today.
+      You are not what you failed to do.
+      You are forgiven, accepted, and loved.
+      Rest in that tonight.

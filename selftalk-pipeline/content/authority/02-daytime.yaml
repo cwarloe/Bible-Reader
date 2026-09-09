@@ -1,0 +1,72 @@
+slug: authority-02-daytime
+title: "Spiritual Authority — Daytime Drill"
+suite: authority
+track_type: daytime
+perspective: first_person
+source: "Ephesians 6:10-18, Luke 10:19, Colossians 2:15, James 4:7, Romans 8:37, 1 John 4:4"
+target_minutes: 6
+
+pacing:
+  noise_pad_gain_db: -10
+
+blocks:
+  - id: opening-tone
+    repeat: 1
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      I am fully equipped and standing in the authority of Christ.
+
+  - id: strong-in-the-lord
+    text: "I am strong in the Lord and in the strength of His mighty power. Not my own — His."
+
+  - id: enemy-disarmed
+    text: "The enemy I face is a defeated enemy. At the cross, God disarmed him and triumphed over him publicly."
+
+  - id: authority-given
+    text: "I have been given authority over all the power of the enemy. Nothing will harm me."
+
+  - id: greater-in-me
+    text: "Greater is He who is in me than he who is in the world. I do not operate from fear — I operate from that truth."
+
+  - id: resist
+    text: "I submit to God and I resist the enemy. He flees. That is the promise and it works."
+
+  - id: full-armor
+    text: "I take up the full armor of God. I am not going into this day unprotected or unprepared."
+
+  - id: truth-shield
+    text: "I stand on truth, I am covered by righteousness, and I carry the shield of faith that stops every lie sent my way."
+
+  - id: not-a-victim
+    text: "I am not a victim of spiritual attack. I am a victor in Christ. That is my standing and I walk in it."
+
+  - id: more-than-conqueror
+    text: "In all things, I am more than a conqueror through Him who loved me. Not surviving — conquering."
+
+  - id: prayer-first
+    text: "I pray at all times in the Spirit. Prayer is my first move, not my last resort."
+
+  - id: no-ground-given
+    text: "I give no ground to the enemy — no foothold, no room, no access. I bring every lie into the light of truth."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words, I reinforce my standing in Christ. I am not fighting for victory — I am fighting from it."
+
+  - id: closing-anchor
+    text: "I am fully equipped and standing in the authority of Christ."
+
+synthesis:
+  id: synthesis-you
+  text: |
+    [natural rhythm, grounded conviction]
+    You are fully equipped and standing in the authority of Christ.
+    You are strong in the Lord and in the strength of His mighty power — not your own. His. That strength does not fluctuate.
+    The enemy you face is a defeated enemy. At the cross, God disarmed him and triumphed over him. You operate from that reality.
+    You have been given authority over all the power of the enemy. Greater is He who is in you than he who is in the world. You do not operate from fear — you operate from that truth.
+    You submit to God and resist the enemy — and he flees. That is the promise, and it works.
+    You take up the full armor of God. You stand on truth, you are covered by righteousness, and you carry the shield of faith that stops every lie.
+    You are not a victim of spiritual attack. You are a victor in Christ. That is your standing and you walk in it.
+    In all things, you are more than a conqueror through Him who loved you. Not surviving — conquering.
+    Prayer is your first move, not your last resort. You give no ground to the enemy — no foothold, no room, no access.
+    Each time you hear these words, you reinforce your standing in Christ. You are not fighting for victory — you are fighting from it.
+    You are fully equipped and standing in the authority of Christ.
