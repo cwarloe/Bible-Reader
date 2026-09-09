@@ -1,0 +1,37 @@
+slug: mind-03-evening
+title: "Mind & Thought Life — Evening"
+suite: mind
+track_type: evening
+perspective: second_person
+source: "Psalm 4:4, 19:14, Philippians 4:8, Isaiah 26:3"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      The day of thinking is done. You processed a lot — decisions, conversations, worries, replays. It is time to let the mind settle. You do not need to keep running the tapes.
+
+  - id: let-it-go
+    text: |
+      The things you are still turning over from today — you can set them down. Your subconscious will work on what matters while you sleep. The ones that need your attention will still be there in the morning. The ones that do not will fade. You do not have to hold them all tonight.
+
+  - id: search-me
+    text: |
+      Let the words of your mouth and the meditation of your heart be acceptable before God tonight. If there is something in your thinking that does not belong — a bitterness you have been nursing, a fear you have been feeding, a comparison you have been making — you can release it now. Hand it over.
+
+  - id: fixed-for-sleep
+    text: |
+      Fix your last thoughts on what is true. On who God is. On what He has promised. On what is good and real and settled. You are training your mind even as you fall asleep — so let the last signal be truth.
+
+  - id: he-keeps-you
+    text: |
+      You keep your mind stayed on Him and He keeps you in perfect peace. That peace is available to you right now, in the quiet, as the day ends. Not because everything is resolved, but because He is steady when everything is not.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      Your mind can rest now.
+      You have done enough thinking for today.
+      He holds what you cannot figure out tonight.
+      Let it go. Rest well.

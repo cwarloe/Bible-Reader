@@ -1,0 +1,37 @@
+slug: fear-03-evening
+title: "Fear & Anxiety — Evening"
+suite: fear
+track_type: evening
+perspective: second_person
+source: "Psalm 4:8, 23:1-4, 91:1-4, Matthew 6:34, Philippians 4:7"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      The day is closing. Whatever worries came at you today — the things that made your mind race, the uncertainties that felt heavy — you do not have to take them to bed with you. You can set them down.
+
+  - id: lie-down-in-peace
+    text: |
+      You lie down and sleep in peace. You are not on watch duty tonight. God does not sleep and does not slumber — which means you can. The things that are beyond your control tonight were already beyond your control this morning, and He was holding them then too.
+
+  - id: under-his-wings
+    text: |
+      You dwell in the shelter of the Most High. You rest in the shadow of the Almighty. He is your refuge and your fortress. Whatever the night holds, you are covered.
+
+  - id: release-tomorrow
+    text: |
+      Tomorrow has enough of its own. Tonight, you simply rest. The problems that will be there in the morning will also have God in the morning — just as He was here today. You do not need to solve anything between now and sunrise.
+
+  - id: peace-on-guard
+    text: |
+      The peace of God is on guard over your heart and mind tonight. You do not have to maintain it or manufacture it. It is simply what happens when you trust Him. Let it settle over you now.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You are not in danger.
+      You are not alone.
+      You are held through the night by the One who never sleeps.
+      Rest in that now.

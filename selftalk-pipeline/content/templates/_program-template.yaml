@@ -1,0 +1,72 @@
+# Copy this into content/<suite>/ and rename. Files starting with _ are skipped
+# by the loader, so this template is never treated as a program.
+#
+# Then: selftalk validate --only <slug>
+#       selftalk stats --only <slug>      # check it against target_minutes
+#       selftalk plan --only <slug>       # see what it will cost
+#       selftalk generate --only <slug>
+#       selftalk build --only <slug>
+
+slug: suite-00-tracktype-topic     # unique; becomes the output filename
+title: "Human readable title"
+suite: suite-name
+track_type: morning                # morning | daytime | night
+perspective: second_person         # second_person | first_person (daytime is first_person)
+source: "Scripture reference or source note"
+target_minutes: 8
+
+# Optional. Omit to use the track-type presets in selftalk/config.py.
+# pacing:
+#   pause_block_ms: 1500
+# voice:
+#   voice_id: "override-for-this-track-only"
+
+blocks:
+  # Bookend. The closing block should mirror this one.
+  - id: opening-frame
+    text: |
+      [calm, steady, authoritative, unhurried, measured delivery]
+      These are the programs you choose to have... about yourself... and TOPIC.
+
+  - id: recognition
+    text: |
+      You choose to recognize that you are ... You believe in ... and you live out ...
+      You choose to be in charge of your own ... What you make of ... is up to you, and no one else.
+
+  # One mirror check per morning track.
+  - id: mirror-check
+    text: |
+      When you look at yourself in the mirror, you see yourself as being ...
+
+  # Tricolon. Line breaks are load-bearing — v3 reads each line as its own thought.
+  - id: tricolon-one
+    text: |
+      [deliberate, steady cadence]
+      You ...
+      You ...
+      And you ...
+
+  # Eight to eleven descriptors, ellipses between, no conjunctions until the last.
+  - id: descriptor-series
+    text: |
+      [deliberate emphasis]
+      An accurate description of the person you choose to be would include the words: ... ... and making progress every day.
+
+  - id: every-day
+    text: |
+      [confident and clear]
+      Every day, you ...
+      Every day, you ...
+
+  # Bookend. Mirrors opening-frame, then the closing truth claim.
+  - id: closing-anchor
+    text: |
+      Those are the programs you choose to have about TOPIC. You already know the truth: ... and today is a great day to prove it.
+
+# Daytime tracks only: spoken once, after a longer transition pause, restating
+# the drilled material in second person.
+# synthesis:
+#   id: synthesis-you
+#   text: |
+#     [deliberate, steady cadence]
+#     This is how you choose to ...
