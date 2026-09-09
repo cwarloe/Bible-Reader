@@ -1,5 +1,6 @@
 """Command line entry point.
 
+    selftalk list                  show all programs in the library
     selftalk stats                 what each program costs and how long it runs
     selftalk validate              pre-flight checks, before spending credits
     selftalk voices                list your ElevenLabs voices, to pick a voice_id
@@ -36,6 +37,40 @@ def _select(content_root: Path, only: str | None) -> list[Program]:
         if not programs:
             raise SystemExit(f"no program matching {only!r} under {content_root}")
     return programs
+
+
+def cmd_list(args: argparse.Namespace) -> int:
+    """Show all programs grouped by category, with slug and estimated runtime."""
+    programs = discover_programs(args.content)
+    config = load_config(args.config)
+
+    if not programs:
+        print("No programs found under", args.content)
+        return 0
+
+    # Group by suite
+    from collections import defaultdict
+    by_suite: dict[str, list] = defaultdict(list)
+    for p in programs:
+        by_suite[p.suite or "_"].append(p)
+
+    TRACK_ORDER = {"morning": 0, "daytime": 1, "evening": 2}
+    suite_order = [s for s in by_suite if s != "_"] + (["_"] if "_" in by_suite else [])
+
+    total = 0
+    for suite in suite_order:
+        ps = sorted(by_suite[suite], key=lambda p: TRACK_ORDER.get(p.track_type or "", 9))
+        print(f"\n  {suite.upper()}")
+        for p in ps:
+            pacing = config.pacing_for(p.track_type, p.pacing_overrides)
+            est = estimate_program(p, pacing)
+            runtime = format_duration(est.total_ms)
+            target = f"target {p.target_minutes:g}m" if p.target_minutes else ""
+            print(f"    {p.slug:<38} {runtime:>6}  {target}")
+            total += 1
+
+    print(f"\n{total} program(s).")
+    return 0
 
 
 def cmd_stats(args: argparse.Namespace) -> int:
@@ -242,6 +277,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser = argparse.ArgumentParser(prog="selftalk", description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
+
+    sub.add_parser("list", parents=[common], help="show all programs in the library").set_defaults(func=cmd_list)
 
     p_stats = sub.add_parser("stats", parents=[common], help="word counts, character cost, estimated runtime")
     p_stats.add_argument("-v", "--verbose", action="store_true", help="per-block breakdown")
