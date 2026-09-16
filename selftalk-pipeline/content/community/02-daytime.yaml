@@ -1,0 +1,66 @@
+slug: community-02-daytime
+title: "Community & Vulnerability — Daytime Drill"
+suite: community
+track_type: daytime
+perspective: first_person
+source: "Ecclesiastes 4:9-12, Hebrews 10:24-25, Galatians 6:2, James 5:16, 1 Corinthians 12:21-22, Romans 15:1"
+target_minutes: 6
+
+pacing:
+  noise_pad_gain_db: -10
+
+blocks:
+  - id: opening-tone
+    repeat: 1
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      I am not alone. I am built for community.
+
+  - id: designed
+    text: "I am not designed to carry everything by myself. Needing others is not a flaw in me — it is how I was made."
+
+  - id: two-are-better
+    text: "Two are better than one. I am stronger in community than I am in isolation. I do not go it alone."
+
+  - id: bear-burdens
+    text: "I bear the burdens of others, and I allow others to bear mine. That is not weakness — it is the fulfillment of the law of Christ."
+
+  - id: confess
+    text: "I confess my struggles to people I trust. I bring things into the light rather than carrying them alone in the dark."
+
+  - id: ask-for-help
+    text: "Asking for help is an act of strength, not weakness. I am secure enough to say I need help, and I do."
+
+  - id: not-isolated
+    text: "I do not isolate. I stay connected. I show up for people, and I stay open for them to show up for me."
+
+  - id: encourage
+    text: "I spur others on toward love and good deeds. I encourage people in ways that cost me something, and I receive encouragement in return."
+
+  - id: the-body
+    text: "I am part of a body. I need what others carry, and they need what I carry. My connection to others is not optional — it is how I function."
+
+  - id: known
+    text: "I am known by people who care about me. I am not performing for them — I let them see me, and I am not afraid of that."
+
+  - id: real-strength
+    text: "Real strength is not going it alone. Real strength is being deeply rooted in relationships that hold when everything else is shaking."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words, I reinforce the truth: I am not alone, I am built for community, and I am stronger together than I am by myself."
+
+  - id: closing-anchor
+    text: "I am not alone. I am built for community."
+
+synthesis:
+  id: synthesis-you
+  text: |
+    [natural rhythm, grounded conviction]
+    You are not alone. You are built for community.
+    You are not designed to carry everything by yourself. Needing others is not a flaw in you — it is how you were made. Two are better than one. A cord of three strands is not quickly broken. You are stronger in community than you are in isolation, and you do not go it alone.
+    You bear the burdens of others, and you allow others to bear yours. That is not weakness — it is the fulfillment of the law of Christ. You confess your struggles to people you trust. You bring things into the light rather than carrying them alone in the dark.
+    Asking for help is an act of strength. You are secure enough to say you need it. You do not isolate. You show up for people, and you stay open for them to show up for you.
+    You are part of a body. You need what others carry, and they need what you carry. You spur others on toward love and good deeds, and you receive encouragement in return.
+    You are known. You are not performing — you let people see you, and you are not afraid of that. Real strength is not going it alone. Real strength is being deeply rooted in relationships that hold when everything else is shaking.
+    Each time you hear these words, you reinforce the truth: you are not alone, you are built for community, and you are stronger together than you ever were by yourself.
+    You are not alone. You are built for community.

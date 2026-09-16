@@ -1,0 +1,89 @@
+slug: community-01-morning
+title: "Community & Vulnerability — Morning"
+suite: community
+track_type: morning
+perspective: second_person
+source: "Ecclesiastes 4:9-12, Hebrews 10:24-25, Galatians 6:2, James 5:16, 1 Corinthians 12:21-22, Romans 15:1"
+target_minutes: 8
+
+# The lie being countered:
+# "I should be able to handle this on my own. Asking for help is weakness.
+#  Real strength means going it alone. Admitting struggle makes me less.
+#  No one wants to hear about my problems. I'll figure it out myself.
+#  Being vulnerable is dangerous — people will judge me or use it against me.
+#  The American ideal: self-sufficient, independent, needing no one."
+
+blocks:
+  - id: opening-frame
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      These are the programs you choose to have... about yourself... and about the strength that comes from doing life with others — not despite them.
+
+  - id: recognition
+    text: |
+      You are built for community. You are not designed to carry everything alone. The God who said "it is not good for man to be alone" at the very beginning of creation was not just talking about marriage — He was talking about the nature of what He made. You are wired for interdependence, and needing others is not a flaw in your design. It is the design.
+
+  - id: mirror-check
+    text: |
+      When you look at yourself in the mirror, you see someone who is strong enough to ask for help. You see someone who knows that vulnerability is not weakness — it is the currency of real connection. You see someone who is not going it alone, and is not trying to.
+
+  - id: two-are-better
+    text: |
+      Two are better than one. A cord of three strands is not quickly broken. The person who falls when alone has no one to help them up — but you are not alone. You are in a community of people who need what you carry and carry what you need. That is not a burden. That is the design.
+
+  - id: bear-one-another
+    text: |
+      You bear one another's burdens, and so you fulfill the law of Christ. That means someone is meant to help carry yours. Refusing to let anyone in is not strength — it is isolating yourself from the design God built for your flourishing. Receiving help is an act of trust, and trust is part of love.
+
+  - id: tricolon-community
+    text: |
+      [natural rhythm, grounded conviction]
+      You do not carry this alone.
+      You are strong enough to ask for help.
+      Real community is one of your sources of strength.
+
+  - id: confess-and-pray
+    text: |
+      You confess your struggles to people you trust, and you pray for them — and they for you. That kind of community is where healing happens. The things you carry in the dark grow; the things you bring into the light with a trusted person lose their grip. You are not too broken to be known.
+
+  - id: the-body
+    text: |
+      The eye cannot say to the hand: I don't need you. The head cannot say to the feet: I don't need you. The same is true of you and the people around you. The parts of the body that seem weaker are indispensable. Your need is not a liability — it is your connection point.
+
+  - id: descriptor-series
+    text: |
+      [clear emphasis, genuine energy]
+      An accurate description of who you are includes the words: someone who knows how to receive as well as give... not too proud to ask for help... genuinely connected to others... someone who shows up for people and lets people show up for you... in community, not in isolation.
+
+  - id: spurring-on
+    text: |
+      You spur others on toward love and good deeds. You do not give up meeting together. You encourage people when it costs you something, and you let people encourage you in return. That mutual investment is not optional — it is how the body of Christ actually functions.
+
+  - id: not-weakness
+    text: |
+      Asking for help is not weakness. Admitting struggle is not failure. Letting someone in is not a liability. These are the acts of a person who has broken free from the isolation that the culture sells as strength — and found something stronger on the other side.
+
+  - id: tricolon-strength
+    text: |
+      [natural rhythm, grounded conviction]
+      You are known.
+      You are not alone.
+      You are stronger in community than you ever were alone.
+
+  - id: every-day
+    text: |
+      [confident and energetic]
+      Every day, you choose to show up for the people around you.
+      Every day, you stay open enough to let them show up for you.
+
+  - id: investment
+    text: |
+      You believe that community is worth the vulnerability it requires. Every honest conversation, every act of showing up, every moment of letting someone carry something with you — these build the kind of relationships that hold in the hard seasons. You are making that investment.
+
+  - id: knowing
+    text: |
+      You know that you are not designed for isolation. You know that needing others is not a flaw. You know that the strongest version of you is not the version that carries everything alone — it is the version that is deeply rooted in community.
+
+  - id: closing-anchor
+    text: |
+      Those are the programs you choose to have about community and vulnerability. You already know the truth: you are not meant to go it alone, asking for help is an act of strength, and you are better together... and today is a great day to live like it.

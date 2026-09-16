@@ -1,0 +1,87 @@
+slug: relationships-01-morning
+title: "Relationships & Love — Morning"
+suite: relationships
+track_type: morning
+perspective: second_person
+source: "1 Corinthians 13:4-8, Ephesians 4:2-3, 31-32, John 15:12-13, Romans 12:9-18"
+target_minutes: 8
+
+# The lie being countered:
+# "I am alone. I am unlovable. I am bad at relationships. I push people
+#  away. Real connection is for other people, not me. I will always
+#  end up alone or hurt. Love is risky and I will lose."
+
+blocks:
+  - id: opening-frame
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      These are the programs you choose to have... about yourself... and the way you love, connect, and belong.
+
+  - id: recognition
+    text: |
+      You are a person who loves well. Not perfectly — no one does — but genuinely, consistently, and with a love that comes from the One who is love itself. You are not alone in this. You are deeply known by God, and you are capable of deep connection with others. You are in charge of how you show up in your relationships. That is up to you, and no one else.
+
+  - id: mirror-check
+    text: |
+      When you look at yourself in the mirror, you see someone who is loved and who loves. You see someone who brings patience, kindness, and genuine care to the people around them. You see someone who belongs — to God first, and through that, to the people He has placed in your life.
+
+  - id: you-are-loved
+    text: |
+      You are loved with a love that is patient and kind. A love that does not envy or boast, is not rude or self-seeking, does not keep a record of wrongs, and never fails. That love is not something you have to earn — it is the love God has for you, and it is the foundation from which you love others.
+
+  - id: how-you-love
+    text: |
+      You love the people in your life sincerely. You hate what is evil and hold fast to what is good. You are devoted to them, you outdo yourself in showing them honor. You are patient in hardship, faithful in prayer, and hospitable without grumbling. That is who you are in relationship.
+
+  - id: tricolon-love
+    text: |
+      [natural rhythm, grounded conviction]
+      You are patient.
+      You are kind.
+      You are present.
+
+  - id: bear-with-one-another
+    text: |
+      You bear with others in love. You are completely humble and gentle. You are patient with the people who are difficult to be patient with, and you make every effort to keep the unity of the Spirit in the bond of peace. That is not weakness — that is the strength of mature love.
+
+  - id: forgive-as-forgiven
+    text: |
+      You forgive others as God in Christ has forgiven you. Not because they always deserve it, not because it is easy, but because you know what it is to be forgiven a debt you could not pay. Forgiveness flows through you naturally, because so much has been forgiven in you.
+
+  - id: descriptor-series
+    text: |
+      [clear emphasis, genuine energy]
+      An accurate description of who you are in relationships includes the words: genuinely caring... patient... present... good at listening... willing to forgive... not easily offended... loyal... and someone people are glad to have in their lives.
+
+  - id: no-greater-love
+    text: |
+      You lay down your life for your friends — not always in dramatic moments, but in the daily acts of choosing people over convenience, showing up when it costs something, and loving when it is not returned immediately. That is the love of Christ, and it moves through you.
+
+  - id: live-at-peace
+    text: |
+      As far as it depends on you, you live at peace with everyone. You do not stir up conflict. You do not carry offense. You do not repay evil for evil. You let go of what needs to be let go, and you hold on to what is worth holding.
+
+  - id: tricolon-connection
+    text: |
+      [natural rhythm, grounded conviction]
+      You belong to God.
+      You are not alone.
+      You are built for connection.
+
+  - id: every-day
+    text: |
+      [confident and energetic]
+      Every day, you choose to love the people in front of you.
+      Every day, you build the kinds of relationships that last.
+
+  - id: investment
+    text: |
+      You believe in investing in the people God has placed in your life. Every act of genuine love, every moment of real presence, every difficult conversation handled with grace — these build something that accumulates over time. Loving well comes naturally and joyfully to you.
+
+  - id: knowing
+    text: |
+      You know that you are not alone. You know that you are loved by God first and fully. You know that love, properly rooted, does not ultimately fail — and that the love moving through you comes from a source that does not run out.
+
+  - id: closing-anchor
+    text: |
+      Those are the programs you choose to have about relationships and love. You already know the truth: you are loved, you are not alone, and you are someone who loves others well... and today is a great day to live that out.

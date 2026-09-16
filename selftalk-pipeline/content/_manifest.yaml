@@ -1,0 +1,147 @@
+# Self-Talk Library Manifest
+# All tracks in build order. Edit this file to change build order or disable tracks.
+# Run: python -m selftalk build-all  (or  selftalk build-all)
+
+categories:
+  - slug: identity
+    label: "Identity in Christ"
+    tracks:
+      - file: identity/01-morning.yaml
+        slug: identity-01-morning
+        enabled: true
+      - file: identity/02-daytime.yaml
+        slug: identity-02-daytime
+        enabled: true
+      - file: identity/03-evening.yaml
+        slug: identity-03-evening
+        enabled: true
+
+  - slug: grace
+    label: "Grace & Forgiveness"
+    tracks:
+      - file: grace/01-morning.yaml
+        slug: grace-01-morning
+        enabled: true
+      - file: grace/02-daytime.yaml
+        slug: grace-02-daytime
+        enabled: true
+      - file: grace/03-evening.yaml
+        slug: grace-03-evening
+        enabled: true
+
+  - slug: fear
+    label: "Fear & Anxiety"
+    tracks:
+      - file: fear/01-morning.yaml
+        slug: fear-01-morning
+        enabled: true
+      - file: fear/02-daytime.yaml
+        slug: fear-02-daytime
+        enabled: true
+      - file: fear/03-evening.yaml
+        slug: fear-03-evening
+        enabled: true
+
+  - slug: mind
+    label: "Renewing the Mind"
+    tracks:
+      - file: mind/01-morning.yaml
+        slug: mind-01-morning
+        enabled: true
+      - file: mind/02-daytime.yaml
+        slug: mind-02-daytime
+        enabled: true
+      - file: mind/03-evening.yaml
+        slug: mind-03-evening
+        enabled: true
+
+  - slug: purpose
+    label: "Purpose & Calling"
+    tracks:
+      - file: purpose/01-morning.yaml
+        slug: purpose-01-morning
+        enabled: true
+      - file: purpose/02-daytime.yaml
+        slug: purpose-02-daytime
+        enabled: true
+      - file: purpose/03-evening.yaml
+        slug: purpose-03-evening
+        enabled: true
+
+  - slug: authority
+    label: "Spiritual Authority"
+    tracks:
+      - file: authority/01-morning.yaml
+        slug: authority-01-morning
+        enabled: true
+      - file: authority/02-daytime.yaml
+        slug: authority-02-daytime
+        enabled: true
+      - file: authority/03-evening.yaml
+        slug: authority-03-evening
+        enabled: true
+
+  - slug: strength
+    label: "Strength & Perseverance"
+    tracks:
+      - file: strength/01-morning.yaml
+        slug: strength-01-morning
+        enabled: true
+      - file: strength/02-daytime.yaml
+        slug: strength-02-daytime
+        enabled: true
+      - file: strength/03-evening.yaml
+        slug: strength-03-evening
+        enabled: true
+
+  - slug: relationships
+    label: "Relationships & Love"
+    tracks:
+      - file: relationships/01-morning.yaml
+        slug: relationships-01-morning
+        enabled: true
+      - file: relationships/02-daytime.yaml
+        slug: relationships-02-daytime
+        enabled: true
+      - file: relationships/03-evening.yaml
+        slug: relationships-03-evening
+        enabled: true
+
+  - slug: work
+    label: "Work as Holy Calling"
+    tracks:
+      - file: work/01-morning.yaml
+        slug: work-01-morning
+        enabled: true
+      - file: work/02-daytime.yaml
+        slug: work-02-daytime
+        enabled: true
+      - file: work/03-evening.yaml
+        slug: work-03-evening
+        enabled: true
+
+  - slug: hope
+    label: "Hope & Redemption"
+    tracks:
+      - file: hope/01-morning.yaml
+        slug: hope-01-morning
+        enabled: true
+      - file: hope/02-daytime.yaml
+        slug: hope-02-daytime
+        enabled: true
+      - file: hope/03-evening.yaml
+        slug: hope-03-evening
+        enabled: true
+
+  - slug: community
+    label: "Community & Vulnerability"
+    tracks:
+      - file: community/01-morning.yaml
+        slug: community-01-morning
+        enabled: true
+      - file: community/02-daytime.yaml
+        slug: community-02-daytime
+        enabled: true
+      - file: community/03-evening.yaml
+        slug: community-03-evening
+        enabled: true

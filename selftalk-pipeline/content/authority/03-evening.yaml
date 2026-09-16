@@ -1,0 +1,37 @@
+slug: authority-03-evening
+title: "Spiritual Authority — Evening"
+suite: authority
+track_type: evening
+perspective: second_person
+source: "Psalm 91:1-4, 11-12, Ephesians 6:13, 1 Peter 5:8-9"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      The day is done, and you are still standing. Whatever came at you today — accusation, discouragement, temptation, doubt — you made it through. You stood your ground. That counts.
+
+  - id: dwell-in-shelter
+    text: |
+      You dwell in the shelter of the Most High. You rest in the shadow of the Almighty. Those are not poetic words — they are your actual location tonight. You are covered. The armor does not come off when you close your eyes; the One who guards you does not sleep.
+
+  - id: angels-assigned
+    text: |
+      He has given His angels charge over you to guard you in all your ways. You are not unprotected in the night. What you cannot see is not absent. You are watched over by what you cannot detect and guarded by what you cannot quantify.
+
+  - id: having-done-all-stand
+    text: |
+      Having done all that the day required, you stand. You did not have to win every battle perfectly today — you only had to stay on the field. And you did. That is what standing firm looks like in real life, and you did it.
+
+  - id: he-handles-the-night
+    text: |
+      The enemy prowls — but you are not defenseless, and you are not alone. Be alert, be sober, resist — and then rest, because the One who called you to stand is also the One who watches while you sleep.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You are still standing.
+      You are covered for the night.
+      The victory is not yours to maintain while you sleep — it is His to hold.
+      Rest in that.

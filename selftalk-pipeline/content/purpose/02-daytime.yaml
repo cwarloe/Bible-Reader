@@ -1,0 +1,70 @@
+slug: purpose-02-daytime
+title: "Purpose & Calling — Daytime Drill"
+suite: purpose
+track_type: daytime
+perspective: first_person
+source: "Ephesians 2:10, Jeremiah 29:11, Romans 8:28, 1 Corinthians 12:7, Colossians 3:23"
+target_minutes: 6
+
+pacing:
+  noise_pad_gain_db: -10
+
+blocks:
+  - id: opening-tone
+    repeat: 1
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      I am here on purpose. My life matters.
+
+  - id: workmanship
+    text: "I am God's workmanship, created for good works He prepared in advance for me to walk in."
+
+  - id: plans
+    text: "God has plans for me — plans for good and not for harm, a future and a hope."
+
+  - id: all-things
+    text: "God is working all things together for good for me, because I am called according to His purpose."
+
+  - id: gifted
+    text: "I have been given specific gifts for the common good. My gifts are real, they are needed, and they are meant to be used."
+
+  - id: not-accident
+    text: "I am not here by accident. I am in my job, my city, and my season on purpose."
+
+  - id: ordinary-days
+    text: "My ordinary days are where my calling lives. Nothing I do in faithfulness is wasted."
+
+  - id: as-to-the-lord
+    text: "Whatever I do, I do it wholeheartedly — as to the Lord, not just for human approval."
+
+  - id: contribution
+    text: "I have a contribution that only I can make. My voice is needed. My presence matters."
+
+  - id: on-mission
+    text: "I am on mission in my daily life — not waiting for a special assignment, but living it now."
+
+  - id: positioned
+    text: "God positions people for purposes larger than what they can see at the time. I am positioned well."
+
+  - id: not-finished
+    text: "God's purposes for me are not finished. He is not done with me, and I am not done with what I was made for."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words, I show up more fully to who I was made to be. I live on purpose, with intention, every day."
+
+  - id: closing-anchor
+    text: "I am here on purpose. My life matters."
+
+synthesis:
+  id: synthesis-you
+  text: |
+    [natural rhythm, grounded conviction]
+    You are here on purpose. Your life matters.
+    You are God's workmanship, created for good works He prepared in advance for you to walk in. God has plans for you — plans for good and not for harm, a future and a hope. He is working all things together for good because you are called according to His purpose.
+    You have been given specific gifts for the common good. Your gifts are real. They are needed. They are meant to be used now, not someday.
+    You are not here by accident. You are in your job, your city, and your season on purpose. God positions people for purposes larger than what they can see at the time — and you are positioned well.
+    Your ordinary days are where your calling lives. Nothing you do in faithfulness is wasted. Whatever you do, you do it wholeheartedly — as to the Lord, not just for human approval.
+    You have a contribution only you can make. Your voice is needed. Your presence matters. You are on mission in your daily life.
+    God's purposes for you are not finished. He is not done with you, and you are not done with what you were made for.
+    Each time you hear these words, you show up more fully to who you were made to be. You live on purpose, with intention, every day.
+    You are here on purpose. Your life matters.

@@ -1,0 +1,87 @@
+slug: grace-01-morning
+title: "Grace & Forgiveness — Morning"
+suite: grace
+track_type: morning
+perspective: second_person
+source: "Ephesians 2:1-10, Romans 5:1-11, 8:1-4, 1 John 1:9, Psalm 103:8-14"
+target_minutes: 8
+
+# The lie being countered:
+# "I have sinned too much. God is disappointed in me.
+#  I have to earn my way back. I am too broken to be fully forgiven.
+#  I have to perform to be accepted."
+
+blocks:
+  - id: opening-frame
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      These are the programs you choose to have... about yourself... and the grace and forgiveness that are already yours in Christ.
+
+  - id: recognition
+    text: |
+      You are a person who has been lavished with grace — unearned, undeserved, and unconditional. Not because you performed well enough or tried hard enough, but because God, who is rich in mercy, made you alive together with Christ. That is your standing. It does not fluctuate with your behavior.
+
+  - id: mirror-check
+    text: |
+      When you look at yourself in the mirror, you see someone who has been fully forgiven. Not partially. Not provisionally. Fully. You see someone who has been justified by faith — declared righteous, not by achievement, but by grace through faith. That is the person you are looking at.
+
+  - id: no-performance-required
+    text: |
+      You are not on probation with God. You are not in a season of earning your way back. You have been saved by grace through faith — and that is not of yourself. It is the gift of God. You cannot add to it and you cannot take away from it by your performance.
+
+  - id: far-as-east-from-west
+    text: |
+      God has removed your sins as far as the east is from the west. He does not hold them over you. He does not bring them up. He does not keep a record of wrongs. The same God who knows every failure you have ever had has chosen not to count any of them against you.
+
+  - id: tricolon-grace
+    text: |
+      [natural rhythm, grounded conviction]
+      You are forgiven.
+      You are justified.
+      You are at peace with God.
+
+  - id: no-condemnation
+    text: |
+      There is no condemnation for you — none. The law of the Spirit of life has set you free. You are not under the weight of guilt that the enemy wants you to carry. You have been set free, and that freedom is real and it is complete.
+
+  - id: access-to-god
+    text: |
+      Because of what Christ has done, you have direct access to God. Not when you get it together. Not after you have proven yourself. Right now, as you are, you have full access. You can approach His throne with confidence, not with shame.
+
+  - id: descriptor-series
+    text: |
+      [clear emphasis, genuine energy]
+      An accurate description of who you are includes the words: forgiven... justified... reconciled... accepted... covered... clean... free... at peace with God... and walking in grace.
+
+  - id: grace-not-license
+    text: |
+      You understand that grace is not an excuse to remain the same — it is the power to become who you were created to be. Grace motivates you. It does not paralyze you. You live well not to earn God's favor, but because you already have it.
+
+  - id: compassion-and-mercy
+    text: |
+      The Lord is compassionate and gracious, slow to anger and abounding in love. He knows how you are formed. He remembers that you are human. His mercy toward you is as high as the heavens are above the earth. He is for you, not against you.
+
+  - id: tricolon-standing
+    text: |
+      [natural rhythm, grounded conviction]
+      You do not earn His love.
+      You do not maintain His forgiveness.
+      You rest in it.
+
+  - id: every-day
+    text: |
+      [confident and energetic]
+      Every day, you receive grace — not because you deserve it, but because He gives it.
+      Every day, you walk in the freedom of full forgiveness.
+
+  - id: investment
+    text: |
+      You believe in returning to this truth every morning. The more you hear it, the more it replaces the lie that you have to earn your place. Living in grace comes naturally, freely, and gratefully to you.
+
+  - id: knowing
+    text: |
+      You know what was done for you. You know the price that was paid. You know that it is finished. And you know that nothing you do today can add to or subtract from what Christ has already accomplished on your behalf.
+
+  - id: closing-anchor
+    text: |
+      Those are the programs you choose to have about grace and forgiveness. You already know the truth: you are fully forgiven, completely accepted, and walking in grace that you did not earn and cannot lose... and today is a great day to live like it.

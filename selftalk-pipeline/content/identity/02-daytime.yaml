@@ -1,0 +1,73 @@
+slug: identity-02-daytime
+title: "Identity in Christ — Daytime Drill"
+suite: identity
+track_type: daytime
+perspective: first_person
+source: "Ephesians 1:1-14, 2:1-10, Psalm 139, Romans 8"
+target_minutes: 6
+
+pacing:
+  noise_pad_gain_db: -10
+
+blocks:
+  - id: opening-tone
+    repeat: 1
+    text: |
+      [warm, confident, direct — speaking to someone you believe in]
+      This is who I am.
+
+  - id: chosen
+    text: "I am chosen by God before the foundation of the world."
+
+  - id: loved
+    text: "I am deeply and completely loved — not for what I do, but for who I am in Christ."
+
+  - id: redeemed
+    text: "I am redeemed. My past is paid for. I walk in the new."
+
+  - id: adopted
+    text: "I am an adopted child of God. I belong to Him fully and permanently."
+
+  - id: sealed
+    text: "I am sealed with the Holy Spirit. My identity in God is secure and cannot be taken from me."
+
+  - id: known
+    text: "God knows me completely and loves me completely. I am not hidden, and I am not a disappointment."
+
+  - id: no-condemnation
+    text: "There is no condemnation for me. The accuser has no standing. I am accepted."
+
+  - id: his-workmanship
+    text: "I am God's workmanship, created for purposes He prepared for me in advance."
+
+  - id: not-defined-by-past
+    text: "I am not defined by my failures or my past. I am defined by what God says about me."
+
+  - id: nothing-separates
+    text: "Nothing separates me from the love of God — not my worst day, not my longest struggle."
+
+  - id: seated
+    text: "I am seated with Christ. I live from that position, not toward it."
+
+  - id: fearfully-made
+    text: "I am fearfully and wonderfully made. That truth does not change with my circumstances."
+
+  - id: commitment-anchor
+    text: "Each time I hear these words and let them settle, I strengthen my sense of who I truly am. I am who God says I am — and that is exactly how I choose to live."
+
+  - id: closing-anchor
+    text: "This is who I am."
+
+synthesis:
+  id: synthesis-you
+  text: |
+    [natural rhythm, grounded conviction]
+    This is who you are.
+    You are chosen by God before the foundation of the world. You are deeply and completely loved — not for what you do, but for who you are in Christ. You are redeemed. Your past is paid for. You walk in the new.
+    You are adopted into God's family, sealed with His Spirit, and known completely by the One who made you. Not hidden. Not a disappointment. Known and loved.
+    There is no condemnation for you. None. The accuser has no standing over your life. You are accepted, and that verdict does not change.
+    You are God's workmanship — created with intention, placed with purpose, and equipped for everything set before you.
+    Nothing separates you from the love of God. Not your worst day. Not your longest struggle. Not anything.
+    You are seated with Christ. You live from that position. You do not strive toward it — you already have it.
+    Each time you hear these words and let them settle, you strengthen your sense of who you truly are. You are who God says you are — and that is exactly how you choose to live.
+    This is who you are.

@@ -1,0 +1,46 @@
+# Global defaults. Per-track defaults live in selftalk/config.py (TRACK_PRESETS);
+# a single program can override anything here in its own `voice:`/`pacing:` block.
+
+elevenlabs:
+  # Find yours at https://elevenlabs.io/app/voice-lab -> the voice -> ID.
+  voice_id: "YXtimK1Uha5A2ZzZpoAq"
+  model_id: "eleven_v3"
+  # Robust end of the slider: keeps the measured, unhurried cadence and stops
+  # the model speeding up through long descriptor lists.
+  stability: 0.63
+  similarity_boost: 0.80
+  # Raised from 0.05 — adds warmth and natural energy without going theatrical.
+  style: 0.17
+  speed: 1.0
+
+pacing:
+  # Leave these unset to use the per-track-type presets, which is the norm.
+  # Anything set here applies to every program in the library.
+  pause_transition_ms: 3500   # before a daytime synthesis coda
+  pause_tag_ms: 700           # what one [pause] tag is worth when estimating
+  # Pad added before and after every raw take at assembly time.
+  # When a noise sample can be extracted from the batch (the normal case),
+  # ALL inter-clip and inter-block gaps are also filled with the same tiled
+  # noise at noise_pad_gain_db level, so the listener hears one consistent
+  # room tone throughout — there is no silence for the ear to notice.
+  # The pads only need to cross-fade with the clip's own edge fades (below);
+  # the gap-facing edge is already at the same noise level, so no additional
+  # fade is required there.  80 ms gives comfortable room for those fades.
+  clip_lead_ms: 80            # noise-textured pad before the speech starts
+  clip_tail_ms: 80            # noise-textured pad after the speech ends
+  # Short linear amplitude ramp applied to the raw clip (not the padding) so
+  # the waveform always reaches zero at the clip edge.  The fade is inaudible
+  # as attack/release at these durations but eliminates click discontinuities.
+  clip_fade_in_ms: 15         # 15 ms fade-in on every raw take
+  clip_fade_out_ms: 25        # 25 ms fade-out on every raw take
+  # gap_fade_ms: only used when no noise sample is available (silence fallback).
+  # Leave unset; with continuous noise this parameter has no effect.
+  # gap_fade_ms: 40
+
+audio:
+  output_format: "mp3"
+  bitrate: "192k"
+
+paths:
+  raw_dir: "output/raw_takes"
+  master_dir: "output/master"

@@ -1,0 +1,37 @@
+slug: strength-03-evening
+title: "Strength & Perseverance — Evening"
+suite: strength
+track_type: evening
+perspective: second_person
+source: "Isaiah 40:29-31, Psalm 73:26, Lamentations 3:22-23, 2 Corinthians 4:16-17"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      You made it through today. Whatever it cost you — whatever it took to keep showing up — you are still here, and that is not nothing. In fact, that is a great deal.
+
+  - id: outwardly-but-inwardly
+    text: |
+      Even if your outer self feels worn down tonight, your inner self is being renewed day by day. That is not wishful thinking — that is what God is doing in the unseen work of perseverance. The hard days are forming something in you that the easy days cannot.
+
+  - id: light-momentary
+    text: |
+      These light and momentary troubles are achieving for you an eternal weight of glory that far outweighs them all. Not all trouble feels light and momentary when you are in it — but the perspective is real, and it is worth holding on to tonight.
+
+  - id: strength-for-tomorrow
+    text: |
+      He gives power to the faint, and to those who have no might He increases strength. The strength you will need tomorrow is not something you have to manufacture tonight. He gives it. You rest, and He replenishes.
+
+  - id: not-alone-in-it
+    text: |
+      My flesh and my heart may fail — but God is the strength of my heart and my portion forever. You do not have to be strong enough tonight. He is what you need, and He is not running out.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You did not quit today.
+      That matters more than you know.
+      Rest now. He restores.
+      Tomorrow, you rise again.

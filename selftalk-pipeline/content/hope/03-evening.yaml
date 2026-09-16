@@ -1,0 +1,38 @@
+slug: hope-03-evening
+title: "Hope & Redemption — Evening"
+suite: hope
+track_type: evening
+perspective: second_person
+source: "Lamentations 3:21-23, Romans 8:28, Philippians 1:6, Psalm 130:5-7, 1 Peter 1:3"
+target_minutes: 5
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried]
+      Before you close this day, let something settle in you: you are not behind. You are not too late. Whatever today looked like — however far it was from what you imagined — you are still in the story God is writing.
+
+  - id: mercies-morning
+    text: |
+      His compassions do not fail. They are new every morning. The weight of whatever you didn't finish today, whatever you regret, whatever you wished had gone differently — it does not carry forward into tomorrow as an unpayable debt. Morning brings a fresh start. You can rest in that.
+
+  - id: he-holds-the-future
+    text: |
+      The future you worry about is already in God's hands. He sees the end from the beginning, and He is not scrambling. The plans He has are not cancelled by the days that didn't go the way you hoped. He is not finished with you — not by a long way.
+
+  - id: living-hope
+    text: |
+      You have been born into a living hope — one that does not depend on your circumstances or your track record. It is alive, active, and certain. And it belongs to you tonight, whatever this day held.
+
+  - id: wait-for-the-lord
+    text: |
+      Wait for the Lord. His steadfast love is with Him, and with Him is full redemption. There are things you cannot yet see that He is working on. The story is not over — and the Author of it is good.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      Your story is not finished.
+      His mercies are new in the morning.
+      The work He started in you, He will complete.
+      Rest in that tonight.
+      You are not behind — you are exactly where the next faithful step begins.

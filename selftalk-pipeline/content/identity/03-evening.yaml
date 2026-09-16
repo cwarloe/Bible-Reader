@@ -1,0 +1,42 @@
+slug: identity-03-evening
+title: "Identity in Christ — Evening"
+suite: identity
+track_type: evening
+perspective: second_person
+source: "Psalm 139:1-18, Romans 8:31-39, Zephaniah 3:17"
+target_minutes: 5
+
+# Evening track: reflective, quieter delivery. Releases the day,
+# settles identity truth before sleep, pre-programs tomorrow.
+# The voice is warmer and slower than the morning track —
+# less energizing, more anchoring.
+
+blocks:
+  - id: opening-settle
+    text: |
+      [calm, warm, unhurried — like a trusted friend at the end of a long day]
+      The day is done. Whatever it held — whatever you did well, whatever you wish you had done differently — none of it changes who you are. You are still chosen. You are still loved. You are still His.
+
+  - id: release-the-day
+    text: |
+      You do not need to carry today into tomorrow. The moments you are proud of and the moments you are not — you can release them both. God was with you in every one of them, and He remains with you now.
+
+  - id: he-rejoices
+    text: |
+      The Lord your God is with you right now. He is mighty to save. He takes great delight in you. He quiets you with His love. He rejoices over you. That is the truth about this moment, tonight, regardless of how today felt.
+
+  - id: known-in-the-dark
+    text: |
+      You are known in the quiet and in the dark just as completely as in the light. There is nowhere you can go that is beyond His presence. Even now, as the day ends, He is here — and He is not disappointed in what He sees.
+
+  - id: tomorrow-is-settled
+    text: |
+      Tomorrow, you will wake up the same person you are tonight — chosen, loved, and equipped. Nothing that happened today has altered that. You go into sleep secure, and you will wake up the same way.
+
+  - id: closing-rest
+    text: |
+      [gentle, slowing]
+      You are not what you did today.
+      You are not what was said about you today.
+      You are who God says you are — and that does not change.
+      Rest in that tonight.

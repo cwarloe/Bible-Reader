@@ -1,0 +1,2 @@
+PyYAML>=6.0
+pydub>=0.25.1      # session assembly; also needs ffmpeg on PATH
