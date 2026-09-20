@@ -73,10 +73,15 @@ def strip_stage(text: str) -> str:
 def normalize_reader_text(text: str) -> str:
     """Normalize text for clean TTS reading in Reader.
 
-    Em dashes create variable-length pauses depending on the TTS engine;
-    replacing them with a comma-space gives consistent, natural phrasing.
+    Em dashes (spaced or bare) are replaced with an ellipsis so TTS
+    engines produce a consistent, deliberate pause rather than the
+    variable treatment a comma or raw dash gets.
+      "word — phrase"  →  "word... phrase"
+      "word—phrase"    →  "word... phrase"
     """
-    return text.replace("—", ", ")
+    import re
+    text = re.sub(r"\s*—\s*", "... ", text)
+    return text
 
 
 def text_to_html_paras(text: str) -> str:
