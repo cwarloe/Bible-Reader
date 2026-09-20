@@ -1,5 +1,9 @@
 # Rendered audio is a build artifact — the YAML is the source of truth.
-output/
+# EPUBs are exempt so they're downloadable directly from GitHub.
+output/*
+!output/epub/
+output/epub/*
+!output/epub/*.epub
 
 # Secrets
 .env
