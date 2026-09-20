@@ -70,9 +70,18 @@ def strip_stage(text: str) -> str:
     return "\n".join(lines).strip()
 
 
+def normalize_reader_text(text: str) -> str:
+    """Normalize text for clean TTS reading in Reader.
+
+    Em dashes create variable-length pauses depending on the TTS engine;
+    replacing them with a comma-space gives consistent, natural phrasing.
+    """
+    return text.replace("—", ", ")
+
+
 def text_to_html_paras(text: str) -> str:
     """Convert multi-line block text to <p> tags."""
-    cleaned = strip_stage(text)
+    cleaned = normalize_reader_text(strip_stage(text))
     result = []
     current: list[str] = []
     for line in cleaned.splitlines():
@@ -146,12 +155,7 @@ def chapter_html(doc: dict, track_type: str, cat_label: str) -> str:
         </head>
         <body>
           <div class="chapter">
-            <div class="chapter-meta">
-              <span class="category">{_esc(cat_label)}</span>
-              <span class="duration">{_esc(duration)}</span>
-            </div>
             <h1>{_esc(title)}</h1>
-            <p class="source">{_esc(source)}</p>
             <div class="content">
         {blocks_html}
             </div>
@@ -186,25 +190,6 @@ h1 {
   font-weight: normal;
   margin: 0.2em 0 0.3em;
   line-height: 1.25;
-}
-.chapter-meta {
-  font-size: 0.75em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 0.4em;
-}
-.chapter-meta .duration {
-  margin-left: 1.2em;
-}
-.source {
-  font-size: 0.82em;
-  color: #888;
-  font-style: italic;
-  margin-top: 0;
-  margin-bottom: 2em;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1em;
 }
 p { margin: 0 0 0.9em; }
 .content { margin-top: 1.5em; }
@@ -404,7 +389,7 @@ def collect_chapters(track_filter: str | None = None) -> tuple[list[dict], dict[
             slug = doc.get("slug", f"{cat_slug}-{track_type}")
             title = doc.get("title", f"{cat_label} — {track_label}")
             chap_id = slug.replace("-", "_")
-            label = f"{track_label}" if track_filter else f"{cat_label} — {track_label}"
+            label = title
 
             chapters.append({
                 "id": chap_id,
