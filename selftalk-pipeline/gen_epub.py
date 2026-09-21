@@ -107,9 +107,10 @@ def load_track(path: Path) -> dict:
     return doc
 
 
-def chapter_html(doc: dict, track_type: str, cat_label: str) -> str:
+def chapter_html(doc: dict, track_type: str, cat_label: str,
+                 title_override: str = "") -> str:
     """Build the XHTML body content for one track chapter."""
-    title = doc.get("title", "")
+    title = title_override or doc.get("title", "")
     source = doc.get("source", "")
     duration = TRACK_DURATION.get(track_type, "")
 
@@ -271,29 +272,29 @@ def build_opf(book_title: str, chapters: list[dict], book_uid: str) -> str:
 
 
 def build_nav(book_title: str, chapters: list[dict],
-              by_category: bool = True) -> str:
-    """EPUB 3 nav document. If by_category, nests tracks under category headings."""
-    if by_category:
-        # Group into nested ol
-        from collections import defaultdict
+              group_by: str = "category") -> str:
+    """EPUB 3 nav document. group_by: 'category', 'track_type', or 'none'."""
+    if group_by in ("category", "track_type"):
+        key = "cat_label" if group_by == "category" else "track_type"
         groups: dict[str, list[dict]] = {}
         group_order: list[str] = []
         for ch in chapters:
-            cat = ch.get("cat_label", "")
-            if cat not in groups:
-                groups[cat] = []
-                group_order.append(cat)
-            groups[cat].append(ch)
+            g = ch.get(key, "")
+            if g not in groups:
+                groups[g] = []
+                group_order.append(g)
+            groups[g].append(ch)
 
         items = []
-        for cat in group_order:
-            chs = groups[cat]
+        for g in group_order:
+            chs = groups[g]
+            label = g.title() if group_by == "track_type" else g
             sub = "\n".join(
                 f'          <li><a href="chapters/{ch["id"]}.xhtml">{_esc(ch["label"])}</a></li>'
                 for ch in chs
             )
             items.append(
-                f'        <li><span>{_esc(cat)}</span>\n          <ol>\n{sub}\n          </ol>\n        </li>'
+                f'        <li><span>{_esc(label)}</span>\n          <ol>\n{sub}\n          </ol>\n        </li>'
             )
         toc_items = "\n".join(items)
     else:
@@ -349,7 +350,7 @@ def build_ncx(book_title: str, chapters: list[dict], book_uid: str) -> str:
 
 
 def write_epub(out_path: Path, book_title: str, chapters: list[dict],
-               chapter_htmls: dict[str, str], by_category: bool = True) -> None:
+               chapter_htmls: dict[str, str], group_by: str = "category") -> None:
     """Write a complete EPUB 3 file."""
     book_uid = str(uuid.uuid4())
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -361,7 +362,7 @@ def write_epub(out_path: Path, book_title: str, chapters: list[dict],
         zf.writestr("META-INF/container.xml", CONTAINER_XML)
         zf.writestr("OEBPS/style.css", STYLESHEET)
         zf.writestr("OEBPS/content.opf", build_opf(book_title, chapters, book_uid))
-        zf.writestr("OEBPS/nav.xhtml",   build_nav(book_title, chapters, by_category))
+        zf.writestr("OEBPS/nav.xhtml",   build_nav(book_title, chapters, group_by))
         zf.writestr("OEBPS/toc.ncx",     build_ncx(book_title, chapters, book_uid))
         for ch in chapters:
             zf.writestr(f"OEBPS/chapters/{ch['id']}.xhtml", chapter_htmls[ch["id"]])
@@ -372,38 +373,51 @@ def write_epub(out_path: Path, book_title: str, chapters: list[dict],
 
 # ── build helpers ──────────────────────────────────────────────────────────────
 
-def collect_chapters(track_filter: str | None = None) -> tuple[list[dict], dict[str, str]]:
+def collect_chapters(track_filter: str | None = None,
+                     order: str = "by_category") -> tuple[list[dict], dict[str, str]]:
     """
     Return (chapters metadata list, {id: xhtml string}) for the requested
     track types. track_filter=None means all three.
+    order: 'by_category' (category outer) or 'by_type' (track type outer).
     """
     chapters: list[dict] = []
     htmls: dict[str, str] = {}
 
-    for cat_slug, cat_label in CATEGORIES:
-        cat_dir = CONTENT_DIR / cat_slug
-        for track_type, filename, track_label in TRACK_FILES:
-            if track_filter and track_type != track_filter:
-                continue
-            yaml_path = cat_dir / filename
-            if not yaml_path.exists():
-                print(f"  missing: {yaml_path}")
-                continue
+    if order == "by_type":
+        pairs = [
+            (track_type, filename, track_label, cat_slug, cat_label)
+            for track_type, filename, track_label in TRACK_FILES
+            for cat_slug, cat_label in CATEGORIES
+        ]
+    else:
+        pairs = [
+            (track_type, filename, track_label, cat_slug, cat_label)
+            for cat_slug, cat_label in CATEGORIES
+            for track_type, filename, track_label in TRACK_FILES
+        ]
 
-            doc = load_track(yaml_path)
-            slug = doc.get("slug", f"{cat_slug}-{track_type}")
-            title = doc.get("title", f"{cat_label} — {track_label}")
-            chap_id = slug.replace("-", "_")
-            label = title
+    for track_type, filename, track_label, cat_slug, cat_label in pairs:
+        if track_filter and track_type != track_filter:
+            continue
+        yaml_path = CONTENT_DIR / cat_slug / filename
+        if not yaml_path.exists():
+            print(f"  missing: {yaml_path}")
+            continue
 
-            chapters.append({
-                "id": chap_id,
-                "label": label,
-                "cat_label": cat_label,
-                "track_type": track_type,
-                "slug": slug,
-            })
-            htmls[chap_id] = chapter_html(doc, track_type, cat_label)
+        doc = load_track(yaml_path)
+        slug = doc.get("slug", f"{cat_slug}-{track_type}")
+        chap_id = slug.replace("-", "_")
+        display_title = f"{cat_slug.title()} ({track_label})"
+
+        chapters.append({
+            "id": chap_id,
+            "label": display_title,
+            "cat_label": cat_label,
+            "track_type": track_type,
+            "slug": slug,
+        })
+        htmls[chap_id] = chapter_html(doc, track_type, cat_label,
+                                      title_override=display_title)
 
     return chapters, htmls
 
@@ -424,30 +438,23 @@ def main() -> None:
 
     if args.type:
         # Single track type
-        label_map = {"morning": "Morning", "daytime": "Daytime Drill", "evening": "Evening"}
-        chapters, htmls = collect_chapters(track_filter=args.type)
+        label_map = {"morning": "Morning", "daytime": "Daytime", "evening": "Evening"}
+        chapters, htmls = collect_chapters(track_filter=args.type, order="by_type")
         title = f"Self-Talk — {label_map[args.type]}"
         write_epub(OUT_DIR / f"selftalk-{args.type}.epub", title, chapters, htmls,
-                   by_category=True)
+                   group_by="none")
 
     elif args.combined:
-        # Combined only
-        chapters, htmls = collect_chapters()
+        # Combined only, by category
+        chapters, htmls = collect_chapters(order="by_category")
         write_epub(OUT_DIR / "selftalk-library.epub",
-                   "Self-Talk Library", chapters, htmls, by_category=True)
+                   "Self-Talk Library", chapters, htmls, group_by="category")
 
     else:
-        # All four: combined + three per-type
-        print("Combined:")
-        chapters, htmls = collect_chapters()
+        # Default: single file ordered by track type (Morning → Daytime → Evening)
+        chapters, htmls = collect_chapters(order="by_type")
         write_epub(OUT_DIR / "selftalk-library.epub",
-                   "Self-Talk Library", chapters, htmls, by_category=True)
-
-        print("\nPer track type:")
-        for tt, _, lbl in TRACK_FILES:
-            chs, hts = collect_chapters(track_filter=tt)
-            write_epub(OUT_DIR / f"selftalk-{tt}.epub",
-                       f"Self-Talk — {lbl}", chs, hts, by_category=False)
+                   "Self-Talk Library", chapters, htmls, group_by="track_type")
 
     print("\nDone.")
 
