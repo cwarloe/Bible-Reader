@@ -142,6 +142,11 @@ TRACK_PRESETS: dict[str, dict[str, Any]] = {
     },
 }
 
+# The 33-track library (content/*/03-evening.yaml, build_all.py --track) calls
+# the night format "evening". Accept both names with the same pacing so those
+# tracks validate and get night pacing instead of the bare defaults.
+TRACK_PRESETS["evening"] = TRACK_PRESETS["night"]
+
 TRACK_TYPES = tuple(TRACK_PRESETS)
 
 
