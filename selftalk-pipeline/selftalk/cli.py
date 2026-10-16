@@ -54,7 +54,7 @@ def cmd_list(args: argparse.Namespace) -> int:
     for p in programs:
         by_suite[p.suite or "_"].append(p)
 
-    TRACK_ORDER = {"morning": 0, "daytime": 1, "evening": 2}
+    TRACK_ORDER = {"morning": 0, "daytime": 1, "evening": 2, "night": 2}
     suite_order = [s for s in by_suite if s != "_"] + (["_"] if "_" in by_suite else [])
 
     total = 0

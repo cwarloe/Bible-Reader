@@ -100,7 +100,7 @@ editing the content.
 ```yaml
 slug: eph-04-daytime-identity-walk
 title: "Ephesians 4 — Identity & Walk (Daytime Drill)"
-track_type: daytime          # morning | daytime | night
+track_type: daytime          # morning | daytime | night (evening = night)
 perspective: first_person
 target_minutes: 8
 
