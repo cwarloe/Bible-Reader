@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BBP Outline - Bible Reader</title>
+  <style>
+    /* Theme: blue is the default. Switch with <body data-theme="green|orange|purple|gray"> */
+    :root {
+      --accent: #1f5f9e;        /* strong: act bars, outer border */
+      --accent-mid: #bcd4ec;    /* key idea cells */
+      --accent-soft: #dce9f6;   /* section headers */
+      --accent-faint: #eef4fa;  /* explanation cells */
+      --accent-ink: #12365c;    /* text on tints */
+      --line: #8fb0d1;
+    }
+    body[data-theme="green"]  { --accent:#2e7d4f; --accent-mid:#bfe0cc; --accent-soft:#dcefe3; --accent-faint:#eff7f2; --accent-ink:#17482c; --line:#93c1a5; }
+    body[data-theme="orange"] { --accent:#c25e12; --accent-mid:#f5d2b0; --accent-soft:#fbe6d2; --accent-faint:#fdf3ea; --accent-ink:#6b3207; --line:#e0b48a; }
+    body[data-theme="purple"] { --accent:#6b46a8; --accent-mid:#d9cbee; --accent-soft:#e8dff6; --accent-faint:#f5f0fb; --accent-ink:#3a2266; --line:#b9a4dc; }
+    body[data-theme="gray"]   { --accent:#4a4f57; --accent-mid:#d0d3d8; --accent-soft:#e4e6e9; --accent-faint:#f3f4f5; --accent-ink:#23262b; --line:#a5a9b0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: white;
+      color: #1b1b1b;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1, h2 { color: var(--accent-ink); }
+
+    .bbp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid var(--accent);
+      margin-bottom: 20px;
+      table-layout: fixed;
+    }
+
+    .bbp-table td {
+      border: 1px solid var(--line);
+      padding: 12px;
+      vertical-align: top;
+      font-size: 11pt;
+    }
+
+    .section-header {
+      background-color: var(--accent-soft);
+      color: var(--accent-ink);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .act-header {
+      background-color: var(--accent);
+      color: #fff;
+      font-weight: bold;
+      font-size: 12pt;
+      text-align: center;
+    }
+
+    .key-idea-cell {
+      background-color: var(--accent-mid);
+      color: var(--accent-ink);
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
+    .explanation-cell {
+      background-color: var(--accent-faint);
+      vertical-align: middle;
+    }
+
+    .transition-cell {
+      background-color: #fff;
+    }
+
+    .footer-text {
+      font-size: 10pt;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      font-size: 9pt;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body data-theme="blue">
+  <h1>Beyond Bullet Points Outline</h1>
+  <h2>Bible Reader</h2>
+  <h3>Audience: someone building or using scripture audio tools</h3>
+
+  <table class="bbp-table">
+    <colgroup>
+      <col style="width: 30%">
+      <col style="width: 30%">
+      <col style="width: 40%">
+    </colgroup>
+
+    <tr><td colspan="3" class="section-header">TITLE</td></tr>
+    <tr>
+      <td colspan="3"><strong>Scripture You Can Hear</strong><br>An audio Bible reader and a self-talk pipeline that turn written words into listening sessions.</td>
+    </tr>
+
+    <tr><td colspan="3" class="act-header">ACT 1: SETUP</td></tr>
+    <tr>
+      <td class="section-header">Setting</td>
+      <td class="section-header" colspan="2">Role</td>
+    </tr>
+    <tr>
+      <td>You want scripture and personal scripts available as audio, on your schedule.</td>
+      <td colspan="2">You're a listener and builder who wants repeatable, affordable audio.</td>
+    </tr>
+    <tr>
+      <td class="section-header">Point A (Where am I?)</td>
+      <td class="section-header">Call to Action (How do I get from A to B?)</td>
+      <td class="section-header">Point B (Where do I want to be?)</td>
+    </tr>
+    <tr>
+      <td>Recording by hand is slow, costly to redo, and hard to keep consistent.</td>
+      <td>Run the reader, write scripts in YAML, and build sessions.</td>
+      <td>Scripture audio on demand, consistent every time.</td>
+    </tr>
+
+    <tr><td colspan="3" class="transition-cell"><span class="label">Transition 1</span>This repo holds two related projects. One reads themed passages aloud. The other builds self-talk sessions from scripts.</td></tr>
+
+    <tr><td colspan="3" class="act-header">ACT 2: DEVELOP THE ACTION</td></tr>
+    <tr>
+      <td class="section-header">Key Idea (5 minutes)</td>
+      <td class="section-header">Explanation (15 minutes)</td>
+      <td class="section-header">Details (45 minutes)</td>
+    </tr>
+
+    <tr>
+      <td rowspan="9" class="key-idea-cell"><span class="label">Key Idea 1</span>An Audio Bible Reader Voices Scripture by Theme</td><td rowspan="3" class="explanation-cell"><span class="label">Explanation 1</span><strong>Themed Passages:</strong> references grouped by topic</td><td>A theme line followed by references</td>
+    </tr>
+    <tr>
+      <td>ESV passages fetched for each</td>
+    </tr>
+    <tr>
+      <td>Church Epistles and Pastoral Epistles as examples</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 2</span><strong>AI Voices:</strong> read aloud on demand</td><td>Google Gemini TTS</td>
+    </tr>
+    <tr>
+      <td>ElevenLabs as an alternative</td>
+    </tr>
+    <tr>
+      <td>Voice chosen in the app</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 3</span><strong>Offline Replay:</strong> fetch once, replay anywhere</td><td>Audio and text cached in IndexedDB</td>
+    </tr>
+    <tr>
+      <td>Each verse voiced only once</td>
+    </tr>
+    <tr>
+      <td>API keys encrypted in the browser</td>
+    </tr>
+
+    <tr><td colspan="3" class="transition-cell"><span class="label">Transition 2</span>We've seen how the reader voices Scripture by theme, which gets you audio on demand. Now let's look at the second project, the pipeline that turns your own scripts into listening sessions.</td></tr>
+
+    <tr>
+      <td rowspan="9" class="key-idea-cell"><span class="label">Key Idea 2</span>A Self-Talk Pipeline Turns Scripts into Listening Sessions</td><td rowspan="3" class="explanation-cell"><span class="label">Explanation 1</span><strong>Scripts as Code:</strong> content under version control</td><td>YAML scripts and config</td>
+    </tr>
+    <tr>
+      <td>Plain-text copies of every script</td>
+    </tr>
+    <tr>
+      <td>A manifest tracking the content</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 2</span><strong>Session Types:</strong> three moments in the day</td><td>Morning directives (Helmstetter pattern)</td>
+    </tr>
+    <tr>
+      <td>Daytime repetition drills</td>
+    </tr>
+    <tr>
+      <td>Night integration tracks</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 3</span><strong>Generate and Assemble:</strong> scripts become finished audio</td><td>Voices generated through ElevenLabs</td>
+    </tr>
+    <tr>
+      <td>Tracks assembled with pydub</td>
+    </tr>
+    <tr>
+      <td>One build script runs it all</td>
+    </tr>
+
+    <tr><td colspan="3" class="transition-cell"><span class="label">Transition 3</span>Turning scripts into sessions gives you consistent audio without recording by hand. Next, let's see how the pipeline protects your time and money while it does the work.</td></tr>
+
+    <tr>
+      <td rowspan="9" class="key-idea-cell"><span class="label">Key Idea 3</span>The Pipeline Protects Your Time and Money</td><td rowspan="3" class="explanation-cell"><span class="label">Explanation 1</span><strong>Estimate Before Generating:</strong> know the length first</td><td>Runtime estimated per track</td>
+    </tr>
+    <tr>
+      <td>No surprise over-length audio</td>
+    </tr>
+    <tr>
+      <td>Plan sessions before paying</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 2</span><strong>Don't Pay Twice:</strong> reuse what hasn't changed</td><td>Unchanged lines are not regenerated</td>
+    </tr>
+    <tr>
+      <td>Only edited lines cost credits</td>
+    </tr>
+    <tr>
+      <td>Faster rebuilds</td>
+    </tr>
+    <tr>
+      <td rowspan="3" class="explanation-cell"><span class="label">Explanation 3</span><strong>Catch Mistakes Early:</strong> checks before generation</td><td>SSML mistakes in v3 prompts</td>
+    </tr>
+    <tr>
+      <td>Over-length blocks</td>
+    </tr>
+    <tr>
+      <td>Costly re-records avoided</td>
+    </tr>
+
+    <tr><td colspan="3" class="act-header">ACT 3: RESOLUTION</td></tr>
+    <tr>
+      <td class="section-header">Challenge (Recap)</td>
+      <td class="section-header">Action</td>
+      <td class="section-header">Outcome</td>
+    </tr>
+    <tr>
+      <td><strong>How do I make repeatable audio?</strong><br><br>• What content do I want to hear?<br>• Which voice and format fit?<br>• How do I avoid wasted regeneration?</td>
+      <td><strong>Get started:</strong><br><br>• Run the reader and add your keys<br>• Write scripts in YAML<br>• Build sessions with the pipeline</td>
+      <td><strong>Audio on demand:</strong><br><br>• Scripture voiced by theme<br>• Daily sessions built from scripts<br>• Lower cost and fewer re-records</td>
+    </tr>
+
+    <tr><td colspan="3" class="section-header">CLOSING LINE</td></tr>
+    <tr><td colspan="3">Write it once, voice it once, listen anytime.</td></tr>
+
+    <tr>
+      <td colspan="3" class="footer-text">
+        Based on the Beyond Bullet Points story template by Cliff Atkinson<br>
+        Bible Reader
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
